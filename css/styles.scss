@@ -1,0 +1,343 @@
+
+/*************************************************************************
+
+	AWARDS FOR YOUNG MUSICIANS
+	
+	Developed by Dan Moe & Ruyman Rodriguez 
+	for Design Culture - http://www.design-culture.co.uk/ (c) 2013
+	
+	MODULE: 	styles.scss
+	PURPOSE:	main site styles
+	
+*************************************************************************/
+
+/* CODE MAP
+-------------------------------------------------------------------------
+
+	^1	IMPORTS 
+	
+	^2	SASS VARIABLES 
+	
+	^3	GLOBAL CLASSES 
+	
+	^4	STRUCTURE
+	    ^4a core
+	    ^4b home
+
+
+/*	^1 IMPORTS
+*************************************************************************/
+
+	@import url("reset.css");
+	@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,600italic,700italic);
+	
+
+/* ^2 SASS VARIABLES
+*************************************************************************/
+	
+	// Colours
+	$Black : #000;
+	$DarkBlack : lighten($Black, 13%);
+  $MediumBlack : lighten($Black, 20%);
+  $LightBlack : lighten($Black, 80%);
+  $UltraLightBlack : lighten($Black, 95%);
+  $White : #FFF;
+  $Orange : #FF6600;
+  $Purple : #6C276A;
+  
+  // Globals
+  $GlobalWidth : 1020px;
+  $StickyHeight : 200px;
+  $GlobalPadding : 20px;
+  
+  // Fonts
+  @mixin serifFont {
+    font-family : "Century", Georgia, "Times New Roman", Times, serif;
+  }
+
+  @mixin sansSerifFont {
+    font-family : "Open Sans", Helvetica, Arial, sans-serif;
+  }
+
+  @mixin formFields {
+    height : 15px;
+    padding : 5px ;
+    border : 0;
+    @include sansSerifFont;
+    font-size : 0.7em;
+  }
+  
+  @mixin arrowLinks {
+    height : 25px;
+    width : 25px;
+    float : left;
+    border : 0;
+    background : $Orange url(../img/sprite.png) no-repeat -83px -74px;
+      &:hover {
+        background-color : $LightBlack;
+      }  
+    }
+
+/* ^3	GLOBAL CLASSES
+*************************************************************************/
+
+	::-moz-selection {
+		background : #b3d4fc;
+		text-shadow : none;
+	}
+	
+	::selection {
+		background : #b3d4fc;
+		text-shadow : none;
+	}
+	
+	.clearfix:before,
+	.clearfix:after {
+		content : " ";
+		display : table;
+	}
+	
+	.clearfix:after {
+		clear : both;
+	}
+	
+	.oldbrowser {
+		padding : 0.4em 0;
+    margin : 0;
+		text-align : center;
+    background : $Orange;
+    color : $White;
+	}
+	
+	.oldbrowser a {
+	  color : $Black;
+	  &:hover {
+	    color : $LightBlack;
+	  }
+	}
+	
+	hr {
+		display : block;
+		height : 1px;
+		border : 0;
+		border-top : 1px solid $MediumBlack;
+		margin : 1em 0;
+		padding : 0;
+	}
+	
+	a {
+	  text-decoration : none;
+	}
+	
+	.hide {
+	  display : none;
+	}
+	
+  button[type=submit] {
+    @include arrowLinks;
+  }
+
+
+/* ^4	STRUCTURE
+*************************************************************************/
+
+// ^4a core
+  html, body {
+    height : 100%;
+    background : $UltraLightBlack;
+    @include sansSerifFont;
+  }
+  
+  #wrapper {
+    height : 100%;
+    min-height: 100%;
+    height: auto !important;
+    margin: 0 auto (-$StickyHeight);
+    width : $GlobalWidth; 
+    background : $White;
+  }
+  
+  #masthead {
+    height : 125px;
+    background : $White;
+  }
+  
+  #masthead h1 {
+    height : 80px;
+    width : 190px;
+    padding : 10px 20px;
+    margin : 0;
+    float : left;
+  }
+
+  #masthead h1 a {
+    display : block;
+    height : 80px;
+    width : 190px;
+    background : url(../img/sprite.png) no-repeat 0px 10px;
+  }
+  
+  #header {
+    height : 100px;
+    width : 790px;
+    float : right;
+  }
+  
+  #smallLinks {
+    height : 30px;
+    padding-right : 10px;
+  }
+  
+  #smallLinks ul {
+    display : inline;
+    float : right;
+    margin : 0;
+    padding : 0;
+    list-style : none;
+  }
+  
+  #smallLinks > ul > li {
+    height : 10px;
+    padding : 10px;
+    float : left;
+    font-size : 0.7em;
+    font-weight: 600;
+    border-left : 1px dotted $MediumBlack;
+    color : $MediumBlack;
+
+    a {
+      color : $MediumBlack;
+      &:hover {
+        color : $Orange;
+      }
+    }
+  }
+  
+  ul#socialLinks {
+    height : 20px;
+    display : inline-block;
+    position : relative;
+    top : -3px;
+  }
+  
+  #socialLinks li {
+    height : 20px;
+    width : 20px;
+    float : left;
+    margin-left : 5px;
+  }
+  
+  #socialLinks li a {
+    display : block;
+    height : 20px;
+    width : 20px;
+  }
+  
+  .linkedin {
+    background : url(../img/sprite.png) no-repeat -10px -77px;
+    &:hover {
+      background-position :  -10px -97px;
+    }
+  }
+
+  .twitter {
+    background : url(../img/sprite.png) no-repeat -33px -78px;
+    &:hover {
+      background-position :  -33px -98px;
+    }
+  }
+
+  .facebook {
+    background : url(../img/sprite.png) no-repeat -52px -77px;
+    &:hover {
+      background-position :  -52px -97px;
+    }
+  }
+  
+  #search-form {
+    width : 220px;
+    float : right;
+    padding-top : $GlobalPadding;
+  }
+  
+  #search-form input[type=text] {
+    @include formFields;
+    width : 165px;
+    float : left;
+    background : $UltraLightBlack;
+  }
+  
+  #nav {
+    height : 25px;
+    background : $DarkBlack;
+    clear : both;
+  }
+  
+  #nav input[type=text] {
+    width : 185px;
+    float : left;
+    background : $MediumBlack;
+    color : $White;
+    @include formFields;
+    padding-left : 20px;
+  }
+  
+  #nav ul {
+    float : right;
+    margin : 0;
+    padding : 0;
+  }
+  
+  #nav ul li {
+    font-size : 0.7em;
+    float : left;
+    margin : 0;
+    padding : 0;
+    
+    a {
+      color : $White;
+      &:hover {
+        color : $Orange;
+      }
+    }
+    
+  }
+  
+  #nav ul li a {
+    display : inline-block;
+    margin : 0;
+    padding : 0.35em 1em;
+  }
+  
+  .angels a {
+    background : $Orange;
+    &:hover {
+        color : $DarkBlack !important;
+    }
+  }
+  
+
+  #content {
+    padding : $GlobalPadding;
+    min-height : 400px;
+  }
+  
+  #push {
+    height : $StickyHeight;
+  }
+  
+  #footer {
+    height : $StickyHeight;
+    width : $GlobalWidth; 
+    margin : auto;
+    background : $Orange;  
+  }
+  
+  /* PAGE SPECIFIC */
+  
+  // ^4b home
+  .home #wrapper {
+    background : $MediumBlack;
+  }
+  
+  

@@ -1,0 +1,119 @@
+@import url("reset.css");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,600italic,700italic);
+/*************************************************************************
+
+	AWARDS FOR YOUNG MUSICIANS
+	
+	Developed by Dan Moe & Ruyman Rodriguez 
+	for Design Culture - http://www.design-culture.co.uk/ (c) 2013
+	
+	MODULE: 	styles.scss
+	PURPOSE:	main site styles
+	
+*************************************************************************/
+/* CODE MAP
+-------------------------------------------------------------------------
+
+	^1	IMPORTS 
+	
+	^2	SASS VARIABLES 
+	
+	^3	GLOBAL CLASSES 
+	
+	^4	STRUCTURE
+	    ^4a core
+	    ^4b home
+
+
+/*	^1 IMPORTS
+*************************************************************************/
+/* ^2 SASS VARIABLES
+*************************************************************************/
+/* ^3	GLOBAL CLASSES
+*************************************************************************/
+::-moz-selection { background: #b3d4fc; text-shadow: none; }
+
+::selection { background: #b3d4fc; text-shadow: none; }
+
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+
+.clearfix:after { clear: both; }
+
+.oldbrowser { padding: 0.4em 0; margin: 0; text-align: center; background: #ff6600; color: white; }
+
+.oldbrowser a { color: black; }
+.oldbrowser a:hover { color: #cccccc; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #333333; margin: 1em 0; padding: 0; }
+
+a { text-decoration: none; }
+
+.hide { display: none; }
+
+button[type=submit] { height: 25px; width: 25px; float: left; border: 0; background: #ff6600 url(../img/sprite.png) no-repeat -83px -74px; }
+button[type=submit]:hover { background-color: #cccccc; }
+
+/* ^4	STRUCTURE
+*************************************************************************/
+html, body { height: 100%; background: #f2f2f2; font-family: "Open Sans", Helvetica, Arial, sans-serif; }
+
+#wrapper { height: 100%; min-height: 100%; height: auto !important; margin: 0 auto -200px; width: 1020px; background: white; }
+
+#masthead { height: 125px; background: white; }
+
+#masthead h1 { height: 80px; width: 190px; padding: 10px 20px; margin: 0; float: left; }
+
+#masthead h1 a { display: block; height: 80px; width: 190px; background: url(../img/sprite.png) no-repeat 0px 10px; }
+
+#header { height: 100px; width: 790px; float: right; }
+
+#smallLinks { height: 30px; padding-right: 10px; }
+
+#smallLinks ul { display: inline; float: right; margin: 0; padding: 0; list-style: none; }
+
+#smallLinks > ul > li { height: 10px; padding: 10px; float: left; font-size: 0.7em; font-weight: 600; border-left: 1px dotted #333333; color: #333333; }
+#smallLinks > ul > li a { color: #333333; }
+#smallLinks > ul > li a:hover { color: #ff6600; }
+
+ul#socialLinks { height: 20px; display: inline-block; position: relative; top: -3px; }
+
+#socialLinks li { height: 20px; width: 20px; float: left; margin-left: 5px; }
+
+#socialLinks li a { display: block; height: 20px; width: 20px; }
+
+.linkedin { background: url(../img/sprite.png) no-repeat -10px -77px; }
+.linkedin:hover { background-position: -10px -97px; }
+
+.twitter { background: url(../img/sprite.png) no-repeat -33px -78px; }
+.twitter:hover { background-position: -33px -98px; }
+
+.facebook { background: url(../img/sprite.png) no-repeat -52px -77px; }
+.facebook:hover { background-position: -52px -97px; }
+
+#search-form { width: 220px; float: right; padding-top: 20px; }
+
+#search-form input[type=text] { height: 15px; padding: 5px; border: 0; font-family: "Open Sans", Helvetica, Arial, sans-serif; font-size: 0.7em; width: 165px; float: left; background: #f2f2f2; }
+
+#nav { height: 25px; background: #212121; clear: both; }
+
+#nav input[type=text] { width: 185px; float: left; background: #333333; color: white; height: 15px; padding: 5px; border: 0; font-family: "Open Sans", Helvetica, Arial, sans-serif; font-size: 0.7em; padding-left: 20px; }
+
+#nav ul { float: right; margin: 0; padding: 0; }
+
+#nav ul li { font-size: 0.7em; float: left; margin: 0; padding: 0; }
+#nav ul li a { color: white; }
+#nav ul li a:hover { color: #ff6600; }
+
+#nav ul li a { display: inline-block; margin: 0; padding: 0.35em 1em; }
+
+.angels a { background: #ff6600; }
+.angels a:hover { color: #212121 !important; }
+
+#content { padding: 20px; min-height: 400px; }
+
+#push { height: 200px; }
+
+#footer { height: 200px; width: 1020px; margin: auto; background: #ff6600; }
+
+/* PAGE SPECIFIC */
+.home #wrapper { background: #333333; }
