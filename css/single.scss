@@ -1,0 +1,351 @@
+@import url("reset.css");
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,700,600italic,700italic);
+
+/* ^2 SASS VARIABLES
+*************************************************************************/
+	
+	// Colours
+	$Black : #000;
+	$DarkBlack : lighten($Black, 13%);
+  $MediumBlack : lighten($Black, 20%);
+  $LightBlack : lighten($Black, 80%);
+  $UltraLightBlack : lighten($Black, 95%);
+  $White : #FFF;
+  $Orange : #FF6600;
+  $Purple : #6C276A;
+  
+  // Globals
+  $GlobalWidth : 1020px;
+  $StickyHeight : 200px;
+  $GlobalPadding : 20px;
+  $GlobalLinkSize : 0.7em;
+  
+  // Fonts
+  @mixin serifFont {
+    font-family : "Century", Georgia, "Times New Roman", Times, serif;
+  }
+
+  @mixin sansSerifFont {
+    font-family : "Open Sans", Helvetica, Arial, sans-serif;
+  }
+
+  @mixin formFields {
+    height : 15px;
+    padding : 5px ;
+    border : 0;
+    @include sansSerifFont;
+    font-size : $GlobalLinkSize;
+  }
+  
+  @mixin arrowLinks {
+    height : 25px;
+    width : 25px;
+    float : left;
+    border : 0;
+    background : $Orange url(../img/sprite.png) no-repeat -83px -74px;
+      &:hover {
+        background-color : $LightBlack;
+      }  
+    }
+
+
+/* ^3	GLOBAL CLASSES
+*************************************************************************/
+
+	::-moz-selection {
+		background : #b3d4fc;
+		text-shadow : none;
+	}
+	
+	::selection {
+		background : #b3d4fc;
+		text-shadow : none;
+	}
+	
+	.clearfix:before,
+	.clearfix:after {
+		content : " ";
+		display : table;
+	}
+	
+	.clearfix:after {
+		clear : both;
+	}
+	
+	.oldbrowser {
+		padding : 0.4em 0;
+    margin : 0;
+		text-align : center;
+    background : $Orange;
+    color : $White;
+	}
+	
+	.oldbrowser a {
+	  color : $Black;
+	  &:hover {
+	    color : $LightBlack;
+	  }
+	}
+	
+	hr {
+		display : block;
+		height : 1px;
+		border : 0;
+		border-top : 1px solid $MediumBlack;
+		margin : 1em 0;
+		padding : 0;
+	}
+	
+	a {
+	  text-decoration : none;
+	}
+	
+	.hide {
+	  display : none;
+	}
+	
+  button[type=submit] {
+    @include arrowLinks;
+  }
+
+/* 
+*************************************************************************/
+
+#LeftSidebar {
+    float:left;
+    height: 100%;
+    padding: 30px 30px 190px;
+    position: relative;
+    width: 190px;
+    background : $MediumBlack;
+    color : $White;
+    
+    nav ul.menu {
+        border-bottom: 1px dotted $White;
+        margin: 0 0 18px 0;
+        padding: 0 0 20px 0;
+        li {
+            font-size: 0.7em;
+            a {
+                color : $White;
+                display: inline-block;
+                margin: 0;
+                padding: 0.35em 0;
+                &.selected,
+                &:hover {
+                    color: $Orange;
+                }
+            }
+            h3 {
+                color: $Orange; 
+                display: inline-block;
+                margin: 0;
+                padding: 0.35em 0;
+                font-size: 1em;
+                font-weight: normal;
+            }
+        }
+    }
+}
+    
+#LeftInfo { 
+    padding-bottom: 10px;
+    position:absolute;
+    bottom: 0;
+    width: 190px;    
+    @include serifFont;
+    h4 {
+        color: $Orange;
+        font-size: 1.1em;
+        font-weight: normal;
+        margin:10px 0;
+    }
+    p {
+        font-size: 1em; 
+        line-height: 1.4em;  
+    }
+    a {
+        color: $Orange;
+        &:hover {
+            text-decoration: underline;
+        }
+    }  
+}
+
+.news {
+    #MainContent {
+        background: #444;
+    }
+}
+
+#MainContent {
+    float:left;
+    padding: 0 25px 30px;
+    width: 495px;
+    h2 {
+        color: $Orange;
+        font-weight: normal;
+        @include serifFont;
+    }
+    p {
+        font-size: 0.8em;
+        line-height: 1.5em;
+    }
+}
+
+#ThumbLinks {
+    border-top: 1px dotted $DarkBlack;
+    margin: 20px 0;
+    padding: 24px 0 0;
+    ul {
+        margin: 0 0 18px 0;
+        padding: 0 0 20px 0;
+        list-style: none;
+        list-style-image: none;
+        li {
+            float: left;
+            width: 130px;
+            margin: 0 30px 20px 0;
+            a {
+                display: inline-block;
+                float:left;
+                margin: 0;
+                padding: 0;
+                @include serifFont;
+                h4 {
+                    color: $Orange;
+                    font-size:0.8em;
+                    line-height:1.3em;
+                    font-weight: normal;
+                    margin:0;
+                }
+                h5 {
+                    color: $DarkBlack;
+                    font-size:0.8em;
+                    line-height:1em;
+                    font-weight: normal;
+                    margin:0;
+                }
+            }
+        }
+        li:last-child {
+            margin-right:0;
+        }
+    }
+}
+
+#News {
+    article {
+        padding-left: 170px;
+        position: relative;
+        color: $White;
+        margin-bottom: 20px;
+        img {
+            position:absolute;
+            top:0;
+            left:0;
+            margin-right:20px;
+        }
+        .itemNews {
+            position:relative;
+            border-bottom: 1px dotted $White;
+            h2 {
+                font-size:0.7em;
+                margin: 0;
+                @include sansSerifFont;
+            }
+            p {
+                font-size:0.7em;
+                margin:0;
+            }
+            a {
+                
+                &.readMore {
+                    position:absolute;
+                    bottom:0;
+                    right:0;
+                    background: #ff6600 url(../img/sprite.png) no-repeat -83px -74px;
+                }
+            }     
+        }
+    }
+}
+
+#RightSidebar {
+    float:left;
+    padding: 20px 30px 30px;
+    position: relative;
+    width: 165px;
+    h3 {
+        color: $Orange;
+        font-size: 1em;
+        font-weight: normal;
+        @include serifFont;
+    }
+    p {
+        font-size: 0.8em;
+    }
+    a {
+        color: $Orange;
+    }
+    
+    div.rightInfo { 
+        @include serifFont;
+        color: $Orange;
+        p {
+            font-size: 1em;
+            line-height: 1.3em;
+        }
+        a {
+            font-size: 1em;
+            line-height: 1.3em;
+            color: $DarkBlack;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+    
+    div.featured { 
+        @include serifFont;
+        background: #DAD6CA;
+        h4 {
+            color: $DarkBlack;
+            font-size: 0.9em;
+            line-height: 1.1em;
+            font-weight: normal;
+            margin: 0;
+            padding:5px 8px 0;
+        }
+    }
+
+    div.item {
+        border-bottom: 1px dotted $DarkBlack;
+        margin: 0 0 18px 0;
+        padding: 0 0 10px 0;
+    }
+    div.item:last-child {
+        border-bottom: none;
+    }
+}
+
+#LatestNews {
+    ul {
+        margin: 0;
+        padding: 0 0 10px 0;
+        list-style: none;
+        list-style-image: none;
+        li {
+            font-size: 0.8em;
+            a {
+                color : $DarkBlack;
+                display: inline-block;
+                margin: 0;
+                padding: 0.35em 0;
+                &:hover {
+                    color: $Orange;
+                }
+            }
+        }
+    }
+}
