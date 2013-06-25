@@ -178,6 +178,83 @@
     }
 }
 
+#Gallery {
+    float:left;
+    padding: 0 0 30px 25px;
+    width: 745px;
+    background: #444;
+    h2 {
+        color: $Orange;
+        font-weight: normal;
+        @include serifFont;
+    }
+    p {
+        font-size: 0.8em;
+        line-height: 1.5em;
+    }
+}
+
+#Filter {
+    font-size:0.8em;
+    color: $Orange;
+    a {
+        color: $White;
+        &:hover {
+            color:$Orange;
+        }
+        &:not(:last-of-type):after {
+            content: " / ";
+            padding: 0 3px;
+        }
+        &:first-of-type {
+            padding-left: 6px;
+        }
+    }
+    
+}
+
+#ItemsGallery {
+    float:left;
+    margin: 20px 0 10px;
+    padding: 0;
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        list-style-image: none;
+        li {
+            float: left;
+            width: 220px;
+            margin: 0 25px 25px 0;
+            a {
+                display: inline-block;
+                /* float:left; */
+                margin: 0;
+                padding: 0;
+                @include serifFont;
+                h3 {
+                    color: $Orange;
+                    font-size:0.8em;
+                    line-height:1.3em;
+                    font-weight: normal;
+                    margin:0;
+                    width:100%;
+                }
+            }
+            h4 {
+                color: $White;
+                font-size:0.7em;
+                line-height:1em;
+                font-weight: normal;
+                margin:0;
+            }
+        }
+        li:last-child {
+            margin-right:0;
+        }
+    }
+}
+
 #MainContent {
     float:left;
     padding: 0 25px 30px;
@@ -195,7 +272,8 @@
 
 #ThumbLinks {
     border-top: 1px dotted $DarkBlack;
-    margin: 20px 0;
+    float:left;
+    margin: 20px 0 10px;
     padding: 24px 0 0;
     ul {
         margin: 0 0 18px 0;
@@ -249,6 +327,7 @@
         .itemNews {
             position:relative;
             border-bottom: 1px dotted $White;
+            min-height: 100px;
             h2 {
                 font-size:0.7em;
                 margin: 0;
@@ -256,17 +335,39 @@
             }
             p {
                 font-size:0.7em;
-                margin:0;
+                margin:0 0 0.8em 0;
+                .date {
+                    font-size:0.7em;
+                    margin-bottom:0.4em;
+                }
             }
             a {
-                
+                span {
+                    display:none;
+                }
                 &.readMore {
                     position:absolute;
-                    bottom:0;
+                    bottom:-1px;
                     right:0;
-                    background: #ff6600 url(../img/sprite.png) no-repeat -83px -74px;
+                    height:20px;
+                    width:20px;
+                    background: #ff6600 url(../img/sprite.png) no-repeat -85px -76px;
                 }
             }     
+        }
+    }
+}
+
+#Pagination {
+    color: $Orange;
+    p {
+        float:right;
+        font-size:0.7em;
+        a {
+            color: $White;
+        }
+        span {
+            color: $White;
         }
     }
 }

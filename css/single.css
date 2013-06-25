@@ -108,6 +108,67 @@ button[type=submit] {
 .news #MainContent {
   background: #444; }
 
+#Gallery {
+  float: left;
+  padding: 0 0 30px 25px;
+  width: 745px;
+  background: #444; }
+  #Gallery h2 {
+    color: #ff6600;
+    font-weight: normal;
+    font-family: "Century", Georgia, "Times New Roman", Times, serif; }
+  #Gallery p {
+    font-size: 0.8em;
+    line-height: 1.5em; }
+
+#Filter {
+  font-size: 0.8em;
+  color: #ff6600; }
+  #Filter a {
+    color: white; }
+    #Filter a:hover {
+      color: #ff6600; }
+    #Filter a:not(:last-of-type):after {
+      content: " / ";
+      padding: 0 3px; }
+    #Filter a:first-of-type {
+      padding-left: 6px; }
+
+#ItemsGallery {
+  float: left;
+  margin: 20px 0 10px;
+  padding: 0; }
+  #ItemsGallery ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    list-style-image: none; }
+    #ItemsGallery ul li {
+      float: left;
+      width: 220px;
+      margin: 0 25px 25px 0; }
+      #ItemsGallery ul li a {
+        display: inline-block;
+        /* float:left; */
+        margin: 0;
+        padding: 0;
+        font-family: "Century", Georgia, "Times New Roman", Times, serif; }
+        #ItemsGallery ul li a h3 {
+          color: #ff6600;
+          font-size: 0.8em;
+          line-height: 1.3em;
+          font-weight: normal;
+          margin: 0;
+          width: 100%; }
+      #ItemsGallery ul li h4 {
+        color: white;
+        font-size: 0.7em;
+        line-height: 1em;
+        font-weight: normal;
+        margin: 0; }
+    #ItemsGallery ul li:last-child {
+      margin-right: 0; }
+
 #MainContent {
   float: left;
   padding: 0 25px 30px;
@@ -122,7 +183,8 @@ button[type=submit] {
 
 #ThumbLinks {
   border-top: 1px dotted #212121;
-  margin: 20px 0;
+  float: left;
+  margin: 20px 0 10px;
   padding: 24px 0 0; }
   #ThumbLinks ul {
     margin: 0 0 18px 0;
@@ -166,19 +228,37 @@ button[type=submit] {
     margin-right: 20px; }
   #News article .itemNews {
     position: relative;
-    border-bottom: 1px dotted white; }
+    border-bottom: 1px dotted white;
+    min-height: 100px; }
     #News article .itemNews h2 {
       font-size: 0.7em;
       margin: 0;
       font-family: "Open Sans", Helvetica, Arial, sans-serif; }
     #News article .itemNews p {
       font-size: 0.7em;
-      margin: 0; }
+      margin: 0 0 0.8em 0; }
+      #News article .itemNews p .date {
+        font-size: 0.7em;
+        margin-bottom: 0.4em; }
+    #News article .itemNews a span {
+      display: none; }
     #News article .itemNews a.readMore {
       position: absolute;
-      bottom: 0;
+      bottom: -1px;
       right: 0;
-      background: #ff6600 url(../img/sprite.png) no-repeat -83px -74px; }
+      height: 20px;
+      width: 20px;
+      background: #ff6600 url(../img/sprite.png) no-repeat -85px -76px; }
+
+#Pagination {
+  color: #ff6600; }
+  #Pagination p {
+    float: right;
+    font-size: 0.7em; }
+    #Pagination p a {
+      color: white; }
+    #Pagination p span {
+      color: white; }
 
 #RightSidebar {
   float: left;
