@@ -49,6 +49,7 @@
   $GlobalWidth : 1020px;
   $StickyHeight : 200px;
   $GlobalPadding : 20px;
+  $GlobalLinkSize : 0.7em;
   
   // Fonts
   @mixin serifFont {
@@ -64,7 +65,7 @@
     padding : 5px ;
     border : 0;
     @include sansSerifFont;
-    font-size : 0.7em;
+    font-size : $GlobalLinkSize;
   }
   
   @mixin arrowLinks {
@@ -200,7 +201,7 @@
     height : 10px;
     padding : 10px;
     float : left;
-    font-size : 0.7em;
+    font-size : $GlobalLinkSize;
     font-weight: 600;
     border-left : 1px dotted $MediumBlack;
     color : $MediumBlack;
@@ -289,7 +290,7 @@
   }
   
   #nav ul li {
-    font-size : 0.7em;
+    font-size : $GlobalLinkSize;
     float : left;
     margin : 0;
     padding : 0;
@@ -315,10 +316,8 @@
         color : $DarkBlack !important;
     }
   }
-  
 
   #content {
-    padding : $GlobalPadding;
     min-height : 400px;
   }
   
@@ -333,6 +332,18 @@
     background : $Orange;  
   }
   
+  #sitemap {
+    border : 1px solid red;
+    padding : $GlobalPadding;
+  }
+  
+  #sitemap > li {
+    border : 1px solid blue;
+    display : inline-block;
+    float : left;
+    font-size : $GlobalLinkSize;
+  }
+  
   /* PAGE SPECIFIC */
   
   // ^4b home
@@ -340,4 +351,7 @@
     background : $MediumBlack;
   }
   
+  .home #content {
+    padding : $GlobalPadding;
+  }
   
