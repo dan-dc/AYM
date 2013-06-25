@@ -149,11 +149,14 @@
 }
     
 #LeftInfo { 
-    padding-bottom: 10px;
     position:absolute;
-    bottom: 0;
-    width: 190px;    
+    top : -210px;
+    width : 210px;  
+    height: 210px;  
+    padding : $GlobalPadding ;         
+    
     @include serifFont;
+
     h4 {
         color: $Orange;
         font-size: 1.1em;
@@ -373,7 +376,7 @@
 }
 
 #RightSidebar {
-    float:left;
+    float:right;
     padding: 20px 30px 30px;
     position: relative;
     width: 165px;
@@ -449,4 +452,11 @@
             }
         }
     }
+}
+
+.sidebar-panel {
+  position : absolute;
+  height : 100%;
+  width : 250px;
+  background : $MediumBlack;
 }

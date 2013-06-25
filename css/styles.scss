@@ -91,6 +91,11 @@
     padding : 0;
     margin : 0;
   }
+  
+  @mixin bringToFront {
+    position : relative;
+    z-index : 10;
+  }
 
 /* ^3	GLOBAL CLASSES
 *************************************************************************/
@@ -183,6 +188,7 @@
   #masthead {
     height : 125px;
     background : $White;
+    @include bringToFront;
     
     h1 {
         height : 80px;
@@ -297,7 +303,7 @@
     clear : both;
     
     input[type=text] {
-      width : 185px;
+      width : 200px;
       float : left;
       background : $MediumBlack;
       color : $White;
@@ -317,7 +323,8 @@
           a {
             display : inline-block;
             margin : 0;
-            padding : 0.35em 1em;
+            padding : 5px 1em;
+            height : 15px;
             color : $White;
             &:hover {
               color : $Orange;
@@ -340,7 +347,8 @@
     width : $GlobalWidth; 
     margin : auto;
     background : $Orange;
-    
+    @include bringToFront;
+        
     nav {
       height : 175px;
     }

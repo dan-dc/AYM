@@ -113,7 +113,9 @@ html, body {
 
 #masthead {
   height: 125px;
-  background: white; }
+  background: white;
+  position: relative;
+  z-index: 10; }
   #masthead h1 {
     height: 80px;
     width: 190px;
@@ -201,7 +203,7 @@ html, body {
   background: #212121;
   clear: both; }
   #nav input[type=text] {
-    width: 185px;
+    width: 200px;
     float: left;
     background: #333333;
     color: white;
@@ -223,7 +225,8 @@ html, body {
       #nav ul li a {
         display: inline-block;
         margin: 0;
-        padding: 0.35em 1em;
+        padding: 5px 1em;
+        height: 15px;
         color: white; }
         #nav ul li a:hover {
           color: #ff6600; }
@@ -237,7 +240,9 @@ html, body {
   height: 200px;
   width: 1020px;
   margin: auto;
-  background: #ff6600; }
+  background: #ff6600;
+  position: relative;
+  z-index: 10; }
   #footer nav {
     height: 175px; }
   #footer section {
