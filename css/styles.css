@@ -21,8 +21,16 @@
 	^3	GLOBAL CLASSES 
 	
 	^4	STRUCTURE
-	    ^4a core
-	    ^4b home
+	
+	    ^4a CORE
+	        ^4a1 masthead
+	        ^4a2 navigation
+	        ^4a3 footer
+	        ^4a4 sitemap
+	        
+	    ^4b HOME
+
+  ^5  TEXT
 
 
 /*	^1 IMPORTS
@@ -97,22 +105,26 @@ html, body {
   width: 1020px;
   background: white; }
 
+#content {
+  min-height: 400px; }
+
+#push {
+  height: 200px; }
+
 #masthead {
   height: 125px;
   background: white; }
-
-#masthead h1 {
-  height: 80px;
-  width: 190px;
-  padding: 10px 20px;
-  margin: 0;
-  float: left; }
-
-#masthead h1 a {
-  display: block;
-  height: 80px;
-  width: 190px;
-  background: url(../img/sprite.png) no-repeat 0px 10px; }
+  #masthead h1 {
+    height: 80px;
+    width: 190px;
+    padding: 10px 20px;
+    margin: 0;
+    float: left; }
+    #masthead h1 a {
+      display: block;
+      height: 80px;
+      width: 190px;
+      background: url(../img/sprite.png) no-repeat 0px 10px; }
 
 #header {
   height: 100px;
@@ -122,43 +134,38 @@ html, body {
 #smallLinks {
   height: 30px;
   padding-right: 10px; }
+  #smallLinks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0; }
+  #smallLinks > ul {
+    float: right; }
+    #smallLinks > ul > li {
+      display: inline;
+      height: 10px;
+      padding: 10px;
+      font-size: 0.7em;
+      font-weight: 600;
+      border-left: 1px dotted #333333;
+      color: #333333; }
+      #smallLinks > ul > li a {
+        color: #333333; }
+        #smallLinks > ul > li a:hover {
+          color: #ff6600; }
 
-#smallLinks ul {
-  display: inline;
-  float: right;
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-
-#smallLinks > ul > li {
-  height: 10px;
-  padding: 10px;
-  float: left;
-  font-size: 0.7em;
-  font-weight: 600;
-  border-left: 1px dotted #333333;
-  color: #333333; }
-  #smallLinks > ul > li a {
-    color: #333333; }
-    #smallLinks > ul > li a:hover {
-      color: #ff6600; }
-
-ul#socialLinks {
-  height: 20px;
+#socialLinks {
   display: inline-block;
   position: relative;
-  top: -3px; }
-
-#socialLinks li {
-  height: 20px;
-  width: 20px;
-  float: left;
-  margin-left: 5px; }
-
-#socialLinks li a {
-  display: block;
-  height: 20px;
-  width: 20px; }
+  top: 6px; }
+  #socialLinks li {
+    height: 20px;
+    width: 20px;
+    float: left;
+    margin-left: 5px; }
+    #socialLinks li a {
+      display: block;
+      height: 20px;
+      width: 20px; }
 
 .linkedin {
   background: url(../img/sprite.png) no-repeat -10px -77px; }
@@ -179,80 +186,124 @@ ul#socialLinks {
   width: 220px;
   float: right;
   padding-top: 20px; }
-
-#search-form input[type=text] {
-  height: 15px;
-  padding: 5px;
-  border: 0;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 0.7em;
-  width: 165px;
-  float: left;
-  background: #f2f2f2; }
+  #search-form input[type=text] {
+    height: 15px;
+    padding: 5px;
+    border: 0;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 0.7em;
+    width: 165px;
+    float: left;
+    background: #f2f2f2; }
 
 #nav {
   height: 25px;
   background: #212121;
   clear: both; }
-
-#nav input[type=text] {
-  width: 185px;
-  float: left;
-  background: #333333;
-  color: white;
-  height: 15px;
-  padding: 5px;
-  border: 0;
-  font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 0.7em;
-  padding-left: 20px; }
-
-#nav ul {
-  float: right;
-  margin: 0;
-  padding: 0; }
-
-#nav ul li {
-  font-size: 0.7em;
-  float: left;
-  margin: 0;
-  padding: 0; }
-  #nav ul li a {
-    color: white; }
-    #nav ul li a:hover {
-      color: #ff6600; }
-
-#nav ul li a {
-  display: inline-block;
-  margin: 0;
-  padding: 0.35em 1em; }
+  #nav input[type=text] {
+    width: 185px;
+    float: left;
+    background: #333333;
+    color: white;
+    height: 15px;
+    padding: 5px;
+    border: 0;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 0.7em;
+    padding-left: 20px; }
+  #nav ul {
+    float: right;
+    padding: 0;
+    margin: 0; }
+    #nav ul li {
+      font-size: 0.7em;
+      float: left;
+      padding: 0;
+      margin: 0; }
+      #nav ul li a {
+        display: inline-block;
+        margin: 0;
+        padding: 0.35em 1em;
+        color: white; }
+        #nav ul li a:hover {
+          color: #ff6600; }
 
 .angels a {
   background: #ff6600; }
   .angels a:hover {
     color: #212121 !important; }
 
-#content {
-  min-height: 400px; }
-
-#push {
-  height: 200px; }
-
 #footer {
   height: 200px;
   width: 1020px;
   margin: auto;
   background: #ff6600; }
+  #footer nav {
+    height: 175px; }
+  #footer section {
+    height: 20px;
+    padding: 5px 0 0 1.75em;
+    background: #212121;
+    color: white; }
+    #footer section a {
+      color: white; }
+      #footer section a:hover {
+        color: #ff6600; }
+  #footer h6 {
+    float: left; }
+  #footer p {
+    font-size: 0.6em;
+    margin: 0 0 10px 0;
+    color: white; }
+    #footer p a {
+      color: white; }
+      #footer p a:hover {
+        color: black; }
 
 #sitemap {
-  border: 1px solid red;
-  padding: 20px; }
+  padding: 0;
+  margin: 0;
+  padding: 15px 20px 0;
+  float: left; }
+  #sitemap li a {
+    padding: 0 1.5em;
+    color: white; }
+    #sitemap li a:hover {
+      color: black; }
+  #sitemap ul + ul {
+    padding-top: 23px !important; }
 
 #sitemap > li {
-  border: 1px solid blue;
   display: inline-block;
   float: left;
-  font-size: 0.7em; }
+  height: 160px;
+  margin: 0;
+  font-size: 0.6em;
+  border-right: 1px dotted white; }
+  #sitemap > li:last-child {
+    border-right: none; }
+
+#sitemap > li > a {
+  font-weight: 600;
+  color: white; }
+
+#sitemap > li ul {
+  padding: 0;
+  margin: 0; }
+
+#sitemap > li > ul > li {
+  clear: both;
+  padding: 0; }
+
+.right-column {
+  width: 180px;
+  float: right;
+  padding: 0 0.7em; }
+
+#footer nav .right-column {
+  border-left: 1px dotted white;
+  margin-top: 15px;
+  height: 160px; }
 
 /* PAGE SPECIFIC */
 .home #wrapper {
@@ -260,3 +311,13 @@ ul#socialLinks {
 
 .home #content {
   padding: 20px; }
+
+/* ^5  TEXT
+*************************************************************************/
+h1, h2, h3, h4, h5, h6 {
+  font-weight: normal; }
+
+h6 {
+  padding: 0;
+  margin: 0;
+  font-size: 0.6em; }
