@@ -178,7 +178,8 @@ button[type=submit] {
 
 #Filter {
   font-size: 0.8em;
-  color: #ff6600; }
+  color: #ff6600;
+  margin-bottom: 20px; }
   #Filter a {
     color: white; }
     #Filter a:hover {
@@ -189,39 +190,31 @@ button[type=submit] {
     #Filter a:first-of-type {
       padding-left: 6px; }
 
-#ItemsGallery {
-  float: left;
-  margin: 20px 0 10px;
-  padding: 0; }
-  #ItemsGallery ul {
+#ItemsGallery article a {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+  /*&:hover img {
+      -webkit-transition: all 350ms ease;
+      -moz-transition: all 350ms ease;
+      -o-transition: all 350ms ease;
+      -ms-transition: all 350ms ease;
+      transition: all 350ms ease;
+  }*/ }
+  #ItemsGallery article a h3 {
+    color: #ff6600;
+    font-size: 0.8em;
+    line-height: 1.3em;
+    font-weight: normal;
     margin: 0;
-    padding: 0;
-    list-style: none;
-    list-style-image: none; }
-    #ItemsGallery ul li {
-      float: left;
-      width: 220px;
-      margin: 0 25px 25px 0; }
-      #ItemsGallery ul li a {
-        display: inline-block;
-        margin: 0;
-        padding: 0;
-        font-family: "Century", Georgia, "Times New Roman", Times, serif; }
-        #ItemsGallery ul li a h3 {
-          color: #ff6600;
-          font-size: 0.8em;
-          line-height: 1.3em;
-          font-weight: normal;
-          margin: 0;
-          width: 100%; }
-      #ItemsGallery ul li h4 {
-        color: white;
-        font-size: 0.7em;
-        line-height: 1em;
-        font-weight: normal;
-        margin: 0; }
-    #ItemsGallery ul li:last-child {
-      margin-right: 0; }
+    width: 100%; }
+  #ItemsGallery article a h4 {
+    color: white;
+    font-size: 0.7em;
+    line-height: 1em;
+    font-weight: normal;
+    margin: 0 0 20px 0; }
 
 #MainContent {
   float: left;
@@ -377,3 +370,43 @@ button[type=submit] {
   height: 100%;
   width: 250px;
   background: #333333; }
+
+/* ==========================================================================
+ISOTOPE SORTER
+========================================================================== */
+/**** Isotope Filtering ****/
+.isotope-item {
+  z-index: 2; }
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1; }
+
+/**** Isotope CSS3 transitions ****/
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s; }
+
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width; }
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -o-transition-property: top, left, opacity;
+  transition-property: transform, opacity; }
+
+/**** disabling Isotope CSS3 transitions ****/
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s; }

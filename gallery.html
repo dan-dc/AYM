@@ -111,60 +111,69 @@
 	        	<section id="Gallery">
 	        	    <h2>Gallery</h2>
 	        	    <div id="Filter">
-                        Filter by: <a href="#">All</a>
-                        <a href="#">Events</a>
-                        <a href="#">Branding</a>
-                        <a href="#">Design</a>
-                        <a href="#">Digital</a>
+                        Filter by: <a href="#" data-filter="*">All</a>
+                        <a href="#" data-filter=".events">Events</a>
+                        <a href="#" data-filter=".performances">Performances</a>
+                        <a href="#" data-filter=".news">News</a>
+                        <a href="#" data-filter=".musicians">Musicians</a>
                     </div>
                     <section id="ItemsGallery">
-                        <ul>
-                            <li>
-                                <a href=""><img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01"></a>
-                                <a href=""><h3>Sarah Smith</h3></a>
+                        <article class="events performances">
+                            <a href="#">
+                                <img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01">
+                                <h3>Sarah Smith</h3>
                                 <h4>Caption to go here</h4>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/imgGallery02.jpg" width="220" height="146" alt="Gallery 02"></a>
-                                <a href=""><h3>Sarah Smith</h3></a>
+                            </a>
+                        </article>
+                        <article class="performances">
+                            <a href="#">
+                                <img src="img/imgGallery02.jpg" width="220" height="146" alt="Gallery 02">
+                                <h3>Sarah Smith</h3>
                                 <h4>Caption to go here</h4>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/imgGallery03.jpg" width="220" height="146" alt="Gallery 03"></a>
-                                <a href=""><h3>Sarah Smith</h3></a>
+                            </a>
+                        </article><article class="musicians performances">
+                            <a href="#">
+                                <img src="img/imgGallery03.jpg" width="220" height="146" alt="Gallery 03">
+                                <h3>Sarah Smith</h3>
                                 <h4>Caption to go here</h4>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/imgGallery04.jpg" width="220" height="146" alt="Gallery 04"></a>
-                                <a href=""><h3>Sarah Smith</h3></a>
+                            </a>
+                        </article><article class="news performances">
+                            <a href="#">
+                                <img src="img/imgGallery04.jpg" width="220" height="146" alt="Gallery 04">
+                                <h3>Sarah Smith</h3>
                                 <h4>Caption to go here</h4>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01"></a>
-                                <a href=""><h3>Sarah Smith</h3></a>
+                            </a>
+                        </article><article class="news musicians">
+                            <a href="#">
+                                <img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01">
+                                <h3>Sarah Smith</h3>
                                 <h4>Caption to go here</h4>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/imgGallery03.jpg" width="220" height="146" alt="Gallery 03"></a>
-                                <a href=""><h3>Sarah Smith</h3></a>
+                            </a>
+                        </article><article class="events">
+                            <a href="#">
+                                <img src="img/imgGallery02.jpg" width="220" height="146" alt="Gallery 02">
+                                <h3>Sarah Smith</h3>
                                 <h4>Caption to go here</h4>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/imgGallery02.jpg" width="220" height="146" alt="Gallery 02"></a>
-                                <a href=""><h3>Sarah Smith</h3></a>
+                            </a>
+                        </article><article class="news">
+                            <a href="#">
+                                <img src="img/imgGallery03.jpg" width="220" height="146" alt="Gallery 03">
+                                <h3>Sarah Smith</h3>
                                 <h4>Caption to go here</h4>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01"></a>
-                                <a href=""><h3>Sarah Smith</h3></a>
+                            </a>
+                        </article><article class="events musicians">
+                            <a href="#">
+                                <img src="img/imgGallery04.jpg" width="220" height="146" alt="Gallery 04">
+                                <h3>Sarah Smith</h3>
                                 <h4>Caption to go here</h4>
-                            </li>
-                            <li>
-                                <a href=""><img src="img/imgGallery04.jpg" width="220" height="146" alt="Gallery 04"></a>
-                                <a href=""><h3>Sarah Smith</h3></a>
+                            </a>
+                        </article><article class="musicians">
+                            <a href="#">
+                                <img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01">
+                                <h3>Sarah Smith</h3>
                                 <h4>Caption to go here</h4>
-                            </li>
-                        </ul>
+                            </a>
+                        </article>
                     </section>
 	        	</section>
 	        	
@@ -178,15 +187,68 @@
 		<footer id="footer">
         
         </footer>
-
-
-
+        
 
 <!--	scripts -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/core/jquery-1.10.1.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="js/core/jquery-1.7.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/jquery-1.7.1.min.js"></script>
+        <script src="js/jquery.isotope.min.js"></script>
+        <script>
+            // modified Isotope methods for gutters in masonry
+            $.Isotope.prototype._getMasonryGutterColumns = function() {
+            var gutter = this.options.masonry && this.options.masonry.gutterWidth || 0;
+                containerWidth = this.element.width();
+      
+            this.masonry.columnWidth = this.options.masonry && this.options.masonry.columnWidth ||
+                            // or use the size of the first item
+                            this.$filteredAtoms.outerWidth(true) ||
+                            // if there's no items, use size of container
+                            containerWidth;
+    
+            this.masonry.columnWidth += gutter;
+    
+            this.masonry.cols = Math.floor( ( containerWidth + gutter ) / this.masonry.columnWidth );
+            this.masonry.cols = Math.max( this.masonry.cols, 1 );
+            };
+    
+            $.Isotope.prototype._masonryReset = function() {
+            // layout-specific props
+            this.masonry = {};
+            // FIXME shouldn't have to call this again
+            this._getMasonryGutterColumns();
+            var i = this.masonry.cols;
+            this.masonry.colYs = [];
+                while (i--) {
+                    this.masonry.colYs.push( 0 );
+                }
+            };
+    
+            $.Isotope.prototype._masonryResizeChanged = function() {
+            var prevSegments = this.masonry.cols;
+            // update cols/rows
+            this._getMasonryGutterColumns();
+            // return if updated cols/rows is not equal to previous
+            return ( this.masonry.cols !== prevSegments );
+            };
+            
+            var $container = $('#ItemsGallery');
+            $container.isotope({
+                masonry: {
+                    columnWidth:220,
+                    gutterWidth:25
+                }
+            });
+        
+            // filter items when filter link is clicked
+            $('#Filter a').click(function(){
+                var selector = $(this).attr('data-filter');
+                $container.isotope({ filter: selector });
+                return false;
+            });
+        </script>
 
 <!--	google analytics -->
         <script>
