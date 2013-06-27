@@ -57,6 +57,60 @@ button[type=submit] {
 
 /* 
 *************************************************************************/
+/*** HOMEPAGE ***/
+#TopContent {
+  background: #212121;
+  float: left;
+  padding: 20px;
+  width: 980px; }
+  #TopContent .item {
+    float: left;
+    padding: 0 26px;
+    width: 272px;
+    border-right: 1px dotted white; }
+    #TopContent .item h2 {
+      color: #ff6600;
+      font-size: 1.1em;
+      font-family: "Century", Georgia, "Times New Roman", Times, serif; }
+    #TopContent .item p {
+      color: white;
+      font-size: 0.7em; }
+      #TopContent .item p a {
+        color: #ff6600; }
+        #TopContent .item p a:hover {
+          text-decoration: underline; }
+    #TopContent .item:last-of-type {
+      border-right: none; }
+
+#BottomContent {
+  float: left;
+  padding: 20px 0; }
+  #BottomContent .item {
+    float: left;
+    padding: 0 26px 0 166px;
+    position: relative;
+    width: 132px;
+    border-right: 1px dotted #cccccc; }
+    #BottomContent .item img {
+      position: absolute;
+      top: 0.8em;
+      left: 26px; }
+    #BottomContent .item h3 {
+      color: #ff6600;
+      font-size: 1em;
+      margin: 0.8em 0;
+      font-family: "Century", Georgia, "Times New Roman", Times, serif; }
+    #BottomContent .item p {
+      color: white;
+      font-size: 0.7em; }
+      #BottomContent .item p a {
+        color: #ff6600; }
+        #BottomContent .item p a:hover {
+          text-decoration: underline; }
+    #BottomContent .item:last-of-type {
+      border-right: none; }
+
+/*** END HOMEPAGE ***/
 #LeftSidebar {
   float: left;
   height: 100%;
@@ -101,10 +155,10 @@ button[type=submit] {
   #LeftInfo p {
     font-size: 1em;
     line-height: 1.4em; }
-  #LeftInfo a {
-    color: #ff6600; }
-    #LeftInfo a:hover {
-      text-decoration: underline; }
+    #LeftInfo p a {
+      color: #ff6600; }
+      #LeftInfo p a:hover {
+        text-decoration: underline; }
 
 .news #MainContent {
   background: #444; }

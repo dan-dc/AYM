@@ -111,6 +111,81 @@
 /* 
 *************************************************************************/
 
+
+/*** HOMEPAGE ***/
+
+#TopContent {
+    background: $DarkBlack;
+    float: left;
+    padding: $GlobalPadding;
+    width: 980px;
+    .item {
+        float: left;
+        padding: 0 26px;
+        width: 272px;   
+        border-right: 1px dotted $White;
+        
+        h2 {
+            color: $Orange;
+            font-size: 1.1em;
+            @include serifFont;    
+        }
+        p {
+            color: $White;
+            font-size: 0.7em;
+            a {
+                color: $Orange;
+                &:hover {
+                    text-decoration:underline;
+                }
+            }
+        }
+        &:last-of-type {
+            border-right: none;
+        }   
+    }
+}
+#BottomContent {
+    float:left;
+    padding: $GlobalPadding 0;
+    .item {
+        float: left;
+        padding: 0 26px 0 166px;
+        position:relative;
+        width: 132px;   
+        border-right: 1px dotted $LightBlack;
+        
+        img {
+            position: absolute;
+            top: 0.8em;
+            left: 26px;
+        }
+        h3 {
+            color: $Orange;
+            font-size: 1em;
+            margin: 0.8em 0;
+            @include serifFont;    
+        }
+        p {
+            color: $White;
+            font-size: 0.7em;
+            a {
+                color: $Orange;
+                &:hover {
+                    text-decoration:underline;
+                }
+            }
+        }
+        &:last-of-type {
+            border-right: none;
+        }   
+    }
+}
+
+/*** END HOMEPAGE ***/
+
+
+
 #LeftSidebar {
     float:left;
     height: 100%;
@@ -153,8 +228,7 @@
     top : -210px;
     width : 210px;  
     height: 210px;  
-    padding : $GlobalPadding ;         
-    
+    padding : $GlobalPadding;         
     @include serifFont;
 
     h4 {
@@ -165,14 +239,15 @@
     }
     p {
         font-size: 1em; 
-        line-height: 1.4em;  
+        line-height: 1.4em; 
+        a {
+            color: $Orange;
+            &:hover {
+                text-decoration: underline;
+            }
+        }  
     }
-    a {
-        color: $Orange;
-        &:hover {
-            text-decoration: underline;
-        }
-    }  
+     
 }
 
 .news {
