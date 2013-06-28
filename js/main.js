@@ -14,13 +14,23 @@
 $(document).ready(function() {
 
 /*************************************************************************
- *  Drop down navigation
+ *  Core site interactivity
 *************************************************************************/
+
+//	drop down navigation
 	$('#nav li').has('ul').addClass('drop-down') 
 	//.append('<span class="drop-down">&rsaquo;</span>')
 	
 	$('#nav li').hover(function(){
 		$(this).find('ul').stop().slideToggle();
+	})
+
+//	fill & clear newsletter signup form
+	//var initValue = "Enter your email";
+	
+	//$("form input[type=text]").val(signUpValue);
+	$("input[type=text]").focus(function() {
+        $(this).val('');
 	})
 	
 /*************************************************************************

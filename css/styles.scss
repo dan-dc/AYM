@@ -32,6 +32,7 @@
       ^4c PAGE
       ^4d NEWS
       ^4e GALLERY
+      ^4f CONTACT
 
   ^5  TEXT
 
@@ -172,6 +173,15 @@
     padding: $GlobalPadding;
     border : 1px solid green;
   }
+  
+  .single #MainContent p,
+  .single #ThumbLinks a h4:last-child {
+    color : $White;
+  }
+  
+  .single #ThumbLinks {
+    border-top-color : $LightBlack;
+  }
  /* 
   img {
     display : block;
@@ -179,9 +189,25 @@
   }
 */
   .news #wrapper,
+  .single #wrapper,
   .gallery #wrapper {
     background : $MediumBlackLight;
   }
+  
+  
+  
+  .news #MainContent,
+  .gallery #MainContent,
+  .contact #MainContent {
+    header {
+      padding-top : $GlobalPadding ;
+      margin-bottom : $GlobalPadding;
+    }
+  }
+  
+ .highlight {
+   color : $Orange;
+ }
 
 /* ^4	STRUCTURE
 *************************************************************************/
@@ -765,12 +791,7 @@
    
    /* ^4d NEWS */  
   .news #MainContent {
-    
-    header {
-      padding-top : $GlobalPadding ;
-      margin-bottom : $GlobalPadding;
-    }
-    
+
     article {
       position: relative;
       padding-left: 170px;
@@ -846,11 +867,6 @@
  
   .gallery #MainContent {
     width : 730px;
-    
-    header {
-      padding-top : $GlobalPadding ;
-      margin-bottom : $GlobalPadding;
-    }
   }
 
   #Filter {
@@ -957,10 +973,100 @@
          -o-transition-duration: 0s;
             transition-duration: 0s;
   }
-  
-  
-  
+
+  /* ^4f CONTACT */
+ #MainContent {
    
+   form {
+     padding-top : $GlobalPadding;
+     margin-top : $GlobalPadding;
+     border-top : $DarkDottedBorder;
+
+     label {
+       width : 20%;
+       height : 25px;
+
+       float : left;
+       clear : left;
+       font-size : $GlobalLinkSize;
+       padding : 5px 0;
+       
+       &:first-child {
+         margin-bottom : 20px
+       }
+       
+       &:last-of-type {
+         margin-top : 18px
+       }
+
+     }
+     
+     input[type=text],
+     textarea {
+       width : 75%;
+       padding : 2%;
+       float : right;
+       //border : 1px solid $LightBlack;
+       border : none;
+       background : $UltraLightBlack;
+       margin-bottom : 20px;
+       font-size : $GlobalLinkSize;
+    
+     }
+     
+     input[type=text] {
+        height : 15px;
+     }
+
+      footer {
+        width : 79%;
+        float : right;
+      }
+      
+      input[type=submit] {
+        border : none;
+        height : 30px;
+        width : 130px;
+        padding-left : 6%;
+        background : transparent;
+        text-align : left;
+        font-size : $GlobalLinkSize;
+        position : relative;
+        z-index : 1;
+        @include sansSerifFont;
+        color : $White;
+        &:hover {
+          //color : $Orange;
+        }
+      }
+   }
+   
+    .send-arrow {
+      position : relative;
+      display : inline-block;
+      background : $Orange url(../img/sprite.png) no-repeat 20px -72px;
+        &:hover {
+          background-color : $LightBlack;
+          .buttonBG {
+              //background : $DarkBlack;
+          }
+        } 
+        .buttonBG {
+            height : 30px;
+            width : 100px;
+            position : absolute;
+            top : 0;
+            z-index : 0;
+            background : $MediumBlackLight;
+        }
+      }   
+    
+ }
+ 
+ .contact #LeftSidebar p {
+   color : $White;
+   margin : 0;
+ }
       
 /* ^5  TEXT
 *************************************************************************/

@@ -32,6 +32,7 @@
       ^4c PAGE
       ^4d NEWS
       ^4e GALLERY
+      ^4f CONTACT
 
   ^5  TEXT
 
@@ -100,6 +101,13 @@ button[type=submit] {
   padding: 20px;
   border: 1px solid green; }
 
+.single #MainContent p,
+.single #ThumbLinks a h4:last-child {
+  color: white; }
+
+.single #ThumbLinks {
+  border-top-color: #cccccc; }
+
  /* 
   img {
     display : block;
@@ -107,8 +115,18 @@ button[type=submit] {
   }
 */
 .news #wrapper,
+.single #wrapper,
 .gallery #wrapper {
   background: #474747; }
+
+.news #MainContent header,
+.gallery #MainContent header,
+.contact #MainContent header {
+  padding-top: 20px;
+  margin-bottom: 20px; }
+
+.highlight {
+  color: #ff6600; }
 
 /* ^4	STRUCTURE
 *************************************************************************/
@@ -530,9 +548,6 @@ html, body {
       border-bottom: 1px solid #ff6600; }
 
 /* ^4d NEWS */
-.news #MainContent header {
-  padding-top: 20px;
-  margin-bottom: 20px; }
 .news #MainContent article {
   position: relative;
   padding-left: 170px;
@@ -582,9 +597,6 @@ html, body {
 /* ^4e GALLERY */
 .gallery #MainContent {
   width: 730px; }
-  .gallery #MainContent header {
-    padding-top: 20px;
-    margin-bottom: 20px; }
 
 #Filter {
   font-size: 0.8em;
@@ -664,6 +676,66 @@ html, body {
   -moz-transition-duration: 0s;
   -o-transition-duration: 0s;
   transition-duration: 0s; }
+
+/* ^4f CONTACT */
+#MainContent form {
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px dotted #212121; }
+  #MainContent form label {
+    width: 20%;
+    height: 25px;
+    float: left;
+    clear: left;
+    font-size: 0.7em;
+    padding: 5px 0; }
+    #MainContent form label:first-child {
+      margin-bottom: 20px; }
+    #MainContent form label:last-of-type {
+      margin-top: 18px; }
+  #MainContent form input[type=text],
+  #MainContent form textarea {
+    width: 75%;
+    padding: 2%;
+    float: right;
+    border: none;
+    background: #f2f2f2;
+    margin-bottom: 20px;
+    font-size: 0.7em; }
+  #MainContent form input[type=text] {
+    height: 15px; }
+  #MainContent form footer {
+    width: 79%;
+    float: right; }
+  #MainContent form input[type=submit] {
+    border: none;
+    height: 30px;
+    width: 130px;
+    padding-left: 6%;
+    background: transparent;
+    text-align: left;
+    font-size: 0.7em;
+    position: relative;
+    z-index: 1;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    color: white; }
+#MainContent .send-arrow {
+  position: relative;
+  display: inline-block;
+  background: #ff6600 url(../img/sprite.png) no-repeat 20px -72px; }
+  #MainContent .send-arrow:hover {
+    background-color: #cccccc; }
+  #MainContent .send-arrow .buttonBG {
+    height: 30px;
+    width: 100px;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+    background: #474747; }
+
+.contact #LeftSidebar p {
+  color: white;
+  margin: 0; }
 
 /* ^5  TEXT
 *************************************************************************/
