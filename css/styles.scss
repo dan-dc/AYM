@@ -29,6 +29,7 @@
 	        ^4a4 sitemap
 	        
 	    ^4b HOME
+      ^4c PAGE
 
   ^5  TEXT
 
@@ -52,12 +53,15 @@
   $White : #FFF;
   $Orange : #FF6600;
   $Purple : #6C276A;
+  $Biege : #DAD6CA;
   
   // Globals
   $GlobalWidth : 1020px;
   $StickyHeight : 200px;
   $GlobalPadding : 20px;
   $GlobalLinkSize : 0.7em;
+  
+  $DarkDottedBorder : 1px dotted $DarkBlack;
   
   // Fonts
   @mixin serifFont {
@@ -147,6 +151,10 @@
 	a {
 	  text-decoration : none;
 	}
+
+  li a {
+    transition : all 0.2s ease;
+  }
 	
 	.hide {
 	  display : none;
@@ -154,6 +162,17 @@
 	
   button[type=submit] {
     @include arrowLinks;
+  }
+  
+  // helpers (DELETE THESE)
+  .inner {
+    padding: $GlobalPadding;
+    border : 1px solid green;
+  }
+ /* 
+  img {
+    display : block;
+    background : gray;
   }
 
 
@@ -174,10 +193,13 @@
     margin: 0 auto (-$StickyHeight);
     width : $GlobalWidth; 
     background : $White;
+    position : relative;
   }
   
   #content {
     min-height : 400px; // might need removing to resolve sidebar height conflicts
+    position : relative;
+    z-index : 1;
   }
   
   #push {
@@ -305,33 +327,58 @@
     input[type=text] {
       width : 200px;
       float : left;
-      background : $MediumBlack;
+      background : lighten($MediumBlack, 8%);
+;
       color : $White;
       @include formFields;
       padding-left : 20px;
     }
     
-    ul {
+    > ul {
       float : right;
       @include resetSpacing;
 
-      li {
+      > li {
           font-size : $GlobalLinkSize;
           float : left;
           @include resetSpacing;
           
-          a {
+          > a {
             display : inline-block;
             margin : 0;
             padding : 5px 1em;
             height : 15px;
-            color : $White;
-            &:hover {
-              color : $Orange;
-            }
           }
+          
+          > ul {
+            position : absolute;
+            background : $DarkBlack;
+            background : rgba(0,0,0,0.7);
+            @include resetSpacing;
+            padding : 10px 0;
+            line-height : 1.8em;
+            display : none;
+            
+            li a {
+              padding : 5px 1em;
+            }
+          } 
        }
-    } 
+     } 
+    
+    a {
+      color : $White;
+      &:hover {
+        color : $Orange;
+      }
+    }
+    
+    /*
+    // uncomment to reveal without jQuery
+    ul li:hover ul {
+      display : block;
+    }
+    */
   }
 
   .angels a {
@@ -396,11 +443,16 @@
         &:hover {
           color : $Black;
         }
-     } 
-     
-     ul + ul {
+    } 
+    
+    > li:first-child a,
+    > li:first-child ul {
+      padding-left : 0;
+    }
+
+    ul + ul {
        padding-top : 23px !important;
-     }   
+    }   
   }
   
   #sitemap > li {
@@ -410,6 +462,7 @@
     margin : 0;
     font-size : $GlobalLinkSize - 0.1;
     border-right : 1px dotted $White;
+
     &:last-child {
       border-right : none;
     }
@@ -430,7 +483,7 @@
   }  
   
   .right-column {
-    width : 180px;
+    width : 205px;
     float : right; 
     padding : 0 0.7em;
   }
@@ -448,17 +501,303 @@
     background : $MediumBlack;
   }
   
-  .home #content {
+  .home #content footer {
     padding : $GlobalPadding;
+    
+    h4 {
+      color : $White;
+      margin-bottom : 10px;
+    }
+    
+    img {
+      text-align : center;
+    }
+  }
+
+  #Slider {
+    height : 365px;
+    position : relative;
+    
+    .slide {
+      height : 365px;
+    
+      .slide-text {
+        height : 285px;
+        width : 40%;
+        float : right;
+        padding : 40px ;
+        position : relative;
+        z-index : 1;
+        
+        p {
+          @include serifFont;
+          font-size: 1.6em;
+          font-weight : 100;
+          display : inline;
+          color : $DarkBlack;
+          
+          &:first-child {
+            color : $Orange;
+          }
+        }  
+      }
+      
+      img {
+        position : absolute;
+      }
+        
+      .darkBG p {
+        color : $White;
+      }   
+           
+    }    
+  }
+
+  #TopContent {
+      background: $DarkBlack;
+      padding: $GlobalPadding;
+      
+      p {
+        padding-right : 20px;
+        border-right: 1px dotted $White;
+      }
+      
+      article:last-child p {
+          border-right: none;
+      } 
   }
   
+  #BottomContent {
+      padding: $GlobalPadding;
+      
+      article {
+        border-right: 1px dotted $White;
+        height : 100px;
+        
+        &:last-child {
+          border-right: none;
+        }
+        
+        p {
+          font-size : 0.7em;
+        }
+      }
+  }
+  
+  .featured-posts article {
+    width: 312px;   
+    float : left;
+    margin-right : 20px;
+    
+    &:last-of-type {
+      margin-right : 0;
+    } 
+    
+    p {
+      color : $White;
+    }
+
+    img {
+      float : left;
+      margin-right : 20px;
+    }
+          
+  }
+  
+  /* ^4c PAGE */
+  .sidebar-panel {
+    position : absolute;
+    top : 0;
+    height : 100%;
+    width : 250px;
+  }
+  
+  .grey {
+    background : $MediumBlack;
+  }
+  
+  .left {
+    left : 0;
+  }
+  
+  .right {
+    right : 0;
+  }
+  
+  #MainContent {
+    width : 480px;
+    padding : 0 $GlobalPadding;
+    float : left;
+    
+    h1 {
+      padding-top : $GlobalPadding;
+    }
+  }
+  
+  .sidebar {
+    padding : $GlobalPadding * 2 $GlobalPadding;
+  }
+  
+  #LeftSidebar {
+    width : 210px;
+    float : left;
+    
+    li a {
+        color : $White;
+    }
+  }
+  
+  #RightSidebar {
+    width : 190px;
+    float : right;
+    
+    li {
+      margin-bottom : 0.5em;
+      a {
+        color : $DarkBlack;
+      }
+    }
+  }
+  
+  .sidebar .menu {
+      border-bottom: 1px dotted $White;
+  }
+
+  #LeftInfo { 
+      width : 210px;  
+      height: 130px;  
+      padding : $GlobalPadding; 
+              
+      position:absolute;
+      z-index : 5;
+      bottom : $StickyHeight ;
+
+      @include serifFont;
+      font-size: 1.2em; 
+      
+      p {
+        color : $White;
+      }
+   }
+   
+   .widget {
+     margin-bottom : $GlobalPadding;
+     padding-bottom : $GlobalPadding;
+     border-bottom : $DarkDottedBorder;
+     
+     h2 a {
+       color : $DarkBlack;
+       &:hover {
+         text-decoration : underline;
+       }
+     }
+     
+     ul {
+       padding : 0 !important;
+     }
+     
+     &:last-child {
+       border-bottom : none;
+     }
+   }
+   
+   .promo {
+     background : $Biege;
+     
+     h4 {
+       color : $DarkBlack;
+       padding : 0 10px;
+     }
+     
+     &:hover {
+       background : $Orange;
+     }
+   }
+   
+   #ThumbLinks {
+     margin-top : $GlobalPadding;
+     padding-top : $GlobalPadding;
+     border-top : $DarkDottedBorder;
+     
+     a {
+       display : inline-block;
+       margin-right : $GlobalPadding * 2;
+       padding-bottom : 10px;
+       
+       &:last-child {
+         margin-right : 0;
+       }
+       
+       h4:last-child {
+         color : $DarkBlack;
+       }
+       
+       &:hover {
+         border-bottom :  1px solid $Orange;
+       }
+     }
+   }
+      
 /* ^5  TEXT
 *************************************************************************/
   h1, h2, h3 , h4, h5, h6 {
+    @include resetSpacing;    
+    @include serifFont; 
+    color: $Orange;
     font-weight : normal;
+    
+    a {
+      color: $Orange;
+    }
+  }
+  
+  h1 {
+      font-size: 1.5em;      
+  }
+
+  h2 {
+      font-size: 1.1em;      
+  }
+  
+  h3 {
+      font-size: 1em;
+      margin-bottom : 0.5em;
+  }
+  
+  h4 {
+      font-size: 0.9em;
+  }
+    
+  h5 {
+    @include sansSerifFont; 
+    font-size : $GlobalLinkSize;
   }
   
   h6 {
-    @include resetSpacing;
+    @include sansSerifFont; 
+    color: $White;
     font-size : $GlobalLinkSize - 0.1;
+  }
+  
+  #content li, p {
+    font-size: 0.8em;
+  }
+
+  p a {
+      color: $Orange;
+      
+      &:hover {
+        text-decoration : underline;
+      }
+  }
+  
+  #content li a:hover {
+      color: $Orange;
+  }
+  
+  .sidebar ul {
+    margin: 0 0 $GlobalPadding 0;
+    padding: 0 0 $GlobalPadding 0;
+    font-size: $GlobalLinkSize + 0.2;
+    list-style : none;
   }
