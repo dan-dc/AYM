@@ -30,6 +30,8 @@
 	        
 	    ^4b HOME
       ^4c PAGE
+      ^4d NEWS
+      ^4e GALLERY
 
   ^5  TEXT
 
@@ -48,6 +50,7 @@
 	$Black : #000;
 	$DarkBlack : lighten($Black, 13%);
   $MediumBlack : lighten($Black, 20%);
+  $MediumBlackLight : lighten($Black, 28%);
   $LightBlack : lighten($Black, 80%);
   $UltraLightBlack : lighten($Black, 95%);
   $White : #FFF;
@@ -174,7 +177,11 @@
     display : block;
     background : gray;
   }
-
+*/
+  .news #wrapper,
+  .gallery #wrapper {
+    background : $MediumBlackLight;
+  }
 
 /* ^4	STRUCTURE
 *************************************************************************/
@@ -327,8 +334,7 @@
     input[type=text] {
       width : 200px;
       float : left;
-      background : lighten($MediumBlack, 8%);
-;
+      background : $MediumBlackLight;
       color : $White;
       @include formFields;
       padding-left : 20px;
@@ -342,7 +348,8 @@
           font-size : $GlobalLinkSize;
           float : left;
           @include resetSpacing;
-          
+          //position : relative;
+
           > a {
             display : inline-block;
             margin : 0;
@@ -365,12 +372,25 @@
           } 
        }
      } 
-    
+
+    .drop-down:after {
+      color : $Orange;
+      content : "\203A";
+      display : inline-block;
+      position : relative;
+      right : 8px;
+      top : 0;
+      transform:rotate(90deg);
+      -ms-transform:rotate(90deg); /* IE 9 */
+      -webkit-transform:rotate(90deg); /* Safari and Chrome */      
+    }
+
     a {
       color : $White;
       &:hover {
         color : $Orange;
-      }
+      } 
+      
     }
     
     /*
@@ -609,19 +629,24 @@
     position : absolute;
     top : 0;
     height : 100%;
-    width : 250px;
   }
   
   .grey {
     background : $MediumBlack;
   }
   
+  .white {
+    background : $White;
+  }
+  
   .left {
     left : 0;
+    width : 250px;
   }
   
   .right {
     right : 0;
+    width : 230px;
   }
   
   #MainContent {
@@ -710,7 +735,7 @@
      }
      
      &:hover {
-       background : $Orange;
+       background : $LightBlack;
      }
    }
    
@@ -737,6 +762,205 @@
        }
      }
    }
+   
+   /* ^4d NEWS */  
+  .news #MainContent {
+    
+    header {
+      padding-top : $GlobalPadding ;
+      margin-bottom : $GlobalPadding;
+    }
+    
+    article {
+      position: relative;
+      padding-left: 170px;
+      margin-bottom: 20px;
+      
+      img {
+        position:absolute;
+        top:0;
+        left:0;
+      }
+      
+      .itemNews {
+        position:relative;
+        border-bottom: 1px dotted $White;
+        min-height: 100px;
+      }
+      
+      h3 {
+        @include sansSerifFont;
+        font-size : 0.8em; 
+      }
+      
+      p {
+        font-size:0.7em;
+        margin:0 0 0.8em 0;
+        color : $White;
+        
+        .date {
+          font-size:0.7em;
+          margin-bottom:0.4em;
+        }
+      }
+      
+      a {
+        
+        span {
+          display:none;
+        }
+        
+        &.readMore {
+          position:absolute;
+          bottom:-1px;
+          right:0;
+          height:20px;
+          width:20px;
+          background: $Orange url(../img/sprite.png) no-repeat -85px -76px;
+          &:hover {
+            background-color : $LightBlack;
+          }
+        }
+      }     
+    }
+  }
+
+  #Pagination {
+      color: $Orange;
+      p {
+          float:right;
+          font-size:0.7em;
+          a {
+              color: $White;
+              &:hover {
+                color: $Orange;
+              }
+          }
+          span {
+              color: $White;
+          }
+      }
+  }
+  
+  /* ^4e GALLERY */
+ 
+  .gallery #MainContent {
+    width : 730px;
+    
+    header {
+      padding-top : $GlobalPadding ;
+      margin-bottom : $GlobalPadding;
+    }
+  }
+
+  #Filter {
+      font-size:0.8em;
+      color: $Orange;
+      margin-bottom: 20px;
+      
+      a {
+          color: $White;
+          &:hover {
+              color:$Orange;
+          }
+          &:not(:last-of-type):after {
+              content: " / ";
+              padding: 0 3px;
+          }
+          &:first-of-type {
+              padding-left: 6px;
+          }
+      }
+      
+  }
+
+  #ItemsGallery {
+    
+      article {
+        margin : 0 $GlobalPadding 0 0;
+      
+          a {
+              display: inline-block;
+              margin: 0;
+              padding: 0;
+              @include sansSerifFont;
+              
+              /*&:hover img {
+                  -webkit-transition: all 350ms ease;
+                  -moz-transition: all 350ms ease;
+                  -o-transition: all 350ms ease;
+                  -ms-transition: all 350ms ease;
+                  transition: all 350ms ease;
+              }*/
+              
+              h3 {
+                  color: $Orange;
+                  font-size:0.8em;
+                  line-height:1.3em;
+                  font-weight: normal;
+                  margin:0;
+                  width:100%;
+              }
+              h4 {
+                  color: $White;
+                  font-size:0.7em;
+                  line-height:1em;
+                  font-weight: normal;
+                  margin:0 0 20px 0;
+              }
+          }
+      }
+  }
+
+  /* Isotope Filtering */
+  
+  .isotope-item {
+    z-index: 2;
+  }
+  
+  .isotope-hidden.isotope-item {
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  /* Isotope CSS3 transitions */
+  
+  .isotope,
+  .isotope .isotope-item {
+    -webkit-transition-duration: 0.8s;
+       -moz-transition-duration: 0.8s;
+         -o-transition-duration: 0.8s;
+            transition-duration: 0.8s;
+  }
+  
+  .isotope {
+    -webkit-transition-property: height, width;
+       -moz-transition-property: height, width;
+         -o-transition-property: height, width;
+            transition-property: height, width;
+  }
+  
+  .isotope .isotope-item {
+    -webkit-transition-property: -webkit-transform, opacity;
+       -moz-transition-property:    -moz-transform, opacity;
+         -o-transition-property:         top, left, opacity;
+            transition-property:         transform, opacity;
+  }
+  
+  /* disabling Isotope CSS3 transitions */
+  
+  .isotope.no-transition,
+  .isotope.no-transition .isotope-item,
+  .isotope .isotope-item.no-transition {
+    -webkit-transition-duration: 0s;
+       -moz-transition-duration: 0s;
+         -o-transition-duration: 0s;
+            transition-duration: 0s;
+  }
+  
+  
+  
+   
       
 /* ^5  TEXT
 *************************************************************************/

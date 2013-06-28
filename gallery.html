@@ -2,7 +2,7 @@
 
 <!--	//////////////////////////////////////////////////////////-->
 <!--	                                                   		//-->
-<!--	Copyright 2014 AWARDS FOR YOUNG MUSICIANS          		//-->
+<!--	Copyright 2013 AWARDS FOR YOUNG MUSICIANS          		//-->
 <!--	http://www.a-y-m.org/         					   		//-->
 <!--	All rights reserved                                		//-->
 <!--	                                                   		//-->
@@ -25,7 +25,6 @@
 
 <!--	styles -->        
         <link rel="stylesheet" href="css/styles.css">
-        <link rel="stylesheet" href="css/single.css">
 
 <!--	modernizr -->        
         <script src="js/core/modernizr-2.6.2.min.js"></script>
@@ -35,12 +34,13 @@
     </head>
 
     <body class="gallery">
+    	
         <!--[if lt IE 7]>
             <p class="oldbrowser">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
 		<div id="wrapper">
-			
+						
 			<header id="masthead">
 				<h1><a href=""><b class="hide">Awards for Young Musicians</b></a></h1>
 				<div id="header">
@@ -69,8 +69,24 @@
 						<button name="submit" type="submit">&nbsp;</button>
 					</form>
 					<ul>
-						<li><a href="">About us</a></li>
-						<li><a href="">How we help</a></li>
+						<li>
+							<a href="">About us</a>
+							<ul>
+								<li><a href="">List Item long</a></li>
+								<li><a href="">List Item</a></li>
+								<li><a href="">List Item really long</a></li>
+								<li><a href="">List Item</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="">How we help</a>
+							<ul>
+								<li><a href="">List Item long</a></li>
+								<li><a href="">List Item</a></li>
+								<li><a href="">List Item really long</a></li>
+								<li><a href="">List Item</a></li>
+							</ul>
+						</li>
 						<li><a href="">Our programmes</a></li>
 						<li><a href="">Supporting AYM</a></li>
 						<li><a href="">News &amp; Events</a></li>
@@ -83,33 +99,37 @@
 	        
 	        <section id="content" class="clearfix">
 	        	
-	        	<aside id="LeftSidebar">
+	        	<aside id="LeftSidebar" class="sidebar">
 	        	    <h4 class="hide">Sidebar Navigation</h4>
-	        	    <nav class="menu-section">
+	        	    <nav>
+	        	    	<header>
+			        	    <h5>About us</h5>
+	        	    	</header>
 	        	        <ul class="menu">
-	        	            <li><a href="#" class="selected">About us</a></li>
 	        	            <li><a href="#">People</a></li>
 	        	            <li><a href="#">Partners</a></li>
 	        	            <li><a href="#">Advocacy</a></li>
 	        	            <li><a href="#">Our heritage</a></li>
 	        	        </ul>
 	        	    </nav>
-	        	    <nav class="menu-section">
+	        	    <nav>
+	        	    	<header>
+			        	    <h5>News Archive</h5>
+	        	    	</header>
 	        	        <ul class="menu">
-	        	            <li><h3>News Archive</h3></li>
 	        	            <li><a href="#">June 2013</a></li>
 	        	            <li><a href="#">May 2013</a></li>
 	        	            <li><a href="#">April 2013</a></li>
 	        	        </ul>
 	        	    </nav>
-	        	    <div id="LeftInfo">
-	        	        <h4>Make a donation</h4>
-	        	        <p>Your support will make a real difference to childrens lifes, find out how to make a donation <a href="#">here</a>.</p>
-	        	    </div>
-	        	</aside>
+	        	</aside><!-- left-sidebar -->
 	        	
-	        	<section id="Gallery">
-	        	    <h2>Gallery</h2>
+	            <div id="MainContent">
+	
+		    	    <header>
+		                <h1>Gallery</h1>
+		            </header>
+
 	        	    <div id="Filter">
                         Filter by: <a href="#" data-filter="*">All</a>
                         <a href="#" data-filter=".events">Events</a>
@@ -117,138 +137,217 @@
                         <a href="#" data-filter=".news">News</a>
                         <a href="#" data-filter=".musicians">Musicians</a>
                     </div>
-                    <section id="ItemsGallery">
+                    
+                    <div id="ItemsGallery">
+                    	
                         <article class="events performances">
                             <a href="#">
                                 <img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01">
-                                <h3>Sarah Smith</h3>
-                                <h4>Caption to go here</h4>
+                                <hgroup>
+	                                <h3>Sarah Smith</h3>
+	                                <h4>Caption to go here</h4>
+                                </hgroup>
                             </a>
                         </article>
+                        
                         <article class="performances">
                             <a href="#">
                                 <img src="img/imgGallery02.jpg" width="220" height="146" alt="Gallery 02">
-                                <h3>Sarah Smith</h3>
-                                <h4>Caption to go here</h4>
-                            </a>
-                        </article><article class="musicians performances">
-                            <a href="#">
-                                <img src="img/imgGallery03.jpg" width="220" height="146" alt="Gallery 03">
-                                <h3>Sarah Smith</h3>
-                                <h4>Caption to go here</h4>
-                            </a>
-                        </article><article class="news performances">
-                            <a href="#">
-                                <img src="img/imgGallery04.jpg" width="220" height="146" alt="Gallery 04">
-                                <h3>Sarah Smith</h3>
-                                <h4>Caption to go here</h4>
-                            </a>
-                        </article><article class="news musicians">
-                            <a href="#">
-                                <img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01">
-                                <h3>Sarah Smith</h3>
-                                <h4>Caption to go here</h4>
-                            </a>
-                        </article><article class="events">
-                            <a href="#">
-                                <img src="img/imgGallery02.jpg" width="220" height="146" alt="Gallery 02">
-                                <h3>Sarah Smith</h3>
-                                <h4>Caption to go here</h4>
-                            </a>
-                        </article><article class="news">
-                            <a href="#">
-                                <img src="img/imgGallery03.jpg" width="220" height="146" alt="Gallery 03">
-                                <h3>Sarah Smith</h3>
-                                <h4>Caption to go here</h4>
-                            </a>
-                        </article><article class="events musicians">
-                            <a href="#">
-                                <img src="img/imgGallery04.jpg" width="220" height="146" alt="Gallery 04">
-                                <h3>Sarah Smith</h3>
-                                <h4>Caption to go here</h4>
-                            </a>
-                        </article><article class="musicians">
-                            <a href="#">
-                                <img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01">
-                                <h3>Sarah Smith</h3>
-                                <h4>Caption to go here</h4>
+                                <hgroup>
+	                                <h3>Sarah Smith</h3>
+	                                <h4>Caption to go here</h4>
+                                </hgroup>
                             </a>
                         </article>
-                    </section>
-	        	</section>
-	        	
-	        </section>
+                        
+                        <article class="musicians performances">
+                            <a href="#">
+                                <img src="img/imgGallery03.jpg" width="220" height="146" alt="Gallery 03">
+                                <hgroup>
+	                                <h3>Sarah Smith</h3>
+	                                <h4>Caption to go here</h4>
+                                </hgroup>
+                            </a>
+                        </article>
+                        
+                        <article class="news performances">
+                            <a href="#">
+                                <img src="img/imgGallery04.jpg" width="220" height="146" alt="Gallery 04">
+                                <hgroup>
+	                                <h3>Sarah Smith</h3>
+	                                <h4>Caption to go here</h4>
+                                </hgroup>
+                            </a>
+                        </article>
+                        
+                        <article class="news musicians">
+                            <a href="#">
+                                <img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01">
+                                <hgroup>
+	                                <h3>Sarah Smith</h3>
+	                                <h4>Caption to go here</h4>
+                                </hgroup>
+                            </a>
+                        </article>
+                        
+                        <article class="events">
+                            <a href="#">
+                                <img src="img/imgGallery02.jpg" width="220" height="146" alt="Gallery 02">
+                                <hgroup>
+	                                <h3>Sarah Smith</h3>
+	                                <h4>Caption to go here</h4>
+                                </hgroup>
+                            </a>
+                        </article>
+                        
+                        <article class="news">
+                            <a href="#">
+                                <img src="img/imgGallery03.jpg" width="220" height="146" alt="Gallery 03">
+                                <hgroup>
+	                                <h3>Sarah Smith</h3>
+	                                <h4>Caption to go here</h4>
+                                </hgroup>
+                            </a>
+                        </article>
+                        
+                        <article class="events musicians">
+                            <a href="#">
+                                <img src="img/imgGallery04.jpg" width="220" height="146" alt="Gallery 04">
+                                <hgroup>
+	                                <h3>Sarah Smith</h3>
+	                                <h4>Caption to go here</h4>
+                                </hgroup>
+                            </a>
+                        </article>
+                        
+                        <article class="musicians">
+                            <a href="#">
+                                <img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01">
+                                <hgroup>
+	                                <h3>Sarah Smith</h3>
+	                                <h4>Caption to go here</h4>
+                                </hgroup>
+                            </a>
+                        </article>
+                        
+                    </div>
+
+	        	</div><!-- /main-content -->
+
+	        </section><!-- /content -->
 	        
+        	<div class="sidebar-panel grey left">
+	    	    <div id="LeftInfo">
+	    	        <h4>Make a donation</h4>
+	    	        <p>Your support will make a real difference to childrens lifes, find out how to make a donation <a href="#">here</a>.</p>
+	    	    </div>
+        	</div>
+
 	        <div id="push">&nbsp;</div>
-        
-        </div>
-        
+
+		</div> <!-- /wrapper -->
         
 		<footer id="footer">
-        
+        	<nav>
+        		<h6 class="hide">site map</h6>
+        		<ul id="sitemap" class="clearfix">
+	        		<li>
+	        			<a href="">About us</a>
+	        			<ul>
+	        				<li><a href="">People</a></li>
+	        				<li><a href="">Partners</a></li>
+	        				<li><a href="">Advocacy</a></li>
+	        				<li><a href="">Our heritage</a></li>
+	        			</ul>
+	        		</li>
+	        		<li>
+	        			<a href="">How we help</a>
+	        			<ul>
+	        				<li><a href="">Individual tailored support</a></li>
+	        				<li><a href="">Performing live</a></li>
+	        				<li><a href="">Case studies</a></li>
+	        				<li><a href="">Resources</a></li>
+	        				<li><a href="">Need extra help?</a></li>
+	        			</ul>
+	        		</li>
+	        		<li>
+	        			<a href="">Our programmes</a>
+	        			<ul>
+	        				<li><a href="">Awards</a></li>
+	        				<li><a href="">Furthering talent</a></li>
+	        				<li><a href="">Music teachers’ support</a></li>
+	        				<li><a href="">Musical progressions</a></li>
+	        			</ul>
+	        		</li>
+	        		<li>
+	        			<a href="">Supporting AYM</a>
+	        			<ul>
+	        				<li><a href="">Appeals</a></li>
+	        				<li><a href="">Sponsor an award</a></li>
+	        				<li><a href="">AYM supporters</a></li>
+	        				<li><a href="">AYM alumni</a></li>
+	        				<li><a href="">AYM community</a></li>
+	        				<li><a href="">AYM projects</a></li>
+	        				<li><a href="">Donate now</a></li>
+	        			</ul>
+	        		</li>
+	        		<li>
+	        			<a href="">News &amp; Events</a>
+	        			<ul>
+	        				<li><a href="">News</a></li>
+	        				<li><a href="">Events calendar</a></li>
+	        				<li><a href="">Contributors blog</a></li>
+	        				<li><a href="">Media</a></li>
+	        			</ul>
+	        		</li>
+	        		<li>
+	        			<a href="">Young Musicians</a>
+	        			<ul>
+	        				<li><a href="">Gallery</a></li>
+	        			</ul>
+	        			<ul>
+	        				<li><a href="">AYM Angels</a></li>
+	        			</ul>
+	        			<ul>
+	        				<li><a href="">FAQs</a></li>
+	        				<li><a href="">Site Map</a></li>
+							<li><a href="">Privacy Policy</a></li>
+	        				<li><a href="">Terms &amp; Conditions</a></li>
+	        			</ul>
+	        		</li>
+        		</ul>
+        		<div class="right-column">
+        			<p>
+        				<strong>Contact us</strong><br/>
+        				T. 011 7904 9906<br/>
+        				E. <a href="">enquiries@a-y-m.org.uk</a>
+        			</p>
+        			<p>
+        				<strong>Awards for Young Musicians</strong><br/>
+        				PO Box 2754<br/>
+						Bristol<br/>
+						BS4 9DA
+					</p>
+        			<p>
+        				Charity 1070994<br/> Company 3602851
+					</p>
+        		</div>
+        	</nav>
+        	
+        	<section id="signoff">
+        		<h6>Awards for Young Musicians <a href="">©</a> 2013 &mdash; All Rights Reserved  |  AYM photos donated and © Edward Webb</h6>
+        		<div class="right-column">
+	        		<h6>Website by <a href="http://www.design-culture.co.uk/">Design Culture</a></h6>
+        		</div>
+        	</section>
         </footer>
-        
+
 
 <!--	scripts -->
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/core/jquery-1.7.1.min.js"><\/script>')</script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/core/jquery-1.10.1.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
-        <script src="js/jquery-1.7.1.min.js"></script>
-        <script src="js/jquery.isotope.min.js"></script>
-        <script>
-            // modified Isotope methods for gutters in masonry
-            $.Isotope.prototype._getMasonryGutterColumns = function() {
-            var gutter = this.options.masonry && this.options.masonry.gutterWidth || 0;
-                containerWidth = this.element.width();
-      
-            this.masonry.columnWidth = this.options.masonry && this.options.masonry.columnWidth ||
-                            // or use the size of the first item
-                            this.$filteredAtoms.outerWidth(true) ||
-                            // if there's no items, use size of container
-                            containerWidth;
-    
-            this.masonry.columnWidth += gutter;
-    
-            this.masonry.cols = Math.floor( ( containerWidth + gutter ) / this.masonry.columnWidth );
-            this.masonry.cols = Math.max( this.masonry.cols, 1 );
-            };
-    
-            $.Isotope.prototype._masonryReset = function() {
-            // layout-specific props
-            this.masonry = {};
-            // FIXME shouldn't have to call this again
-            this._getMasonryGutterColumns();
-            var i = this.masonry.cols;
-            this.masonry.colYs = [];
-                while (i--) {
-                    this.masonry.colYs.push( 0 );
-                }
-            };
-    
-            $.Isotope.prototype._masonryResizeChanged = function() {
-            var prevSegments = this.masonry.cols;
-            // update cols/rows
-            this._getMasonryGutterColumns();
-            // return if updated cols/rows is not equal to previous
-            return ( this.masonry.cols !== prevSegments );
-            };
-            
-            var $container = $('#ItemsGallery');
-            $container.isotope({
-                masonry: {
-                    columnWidth:220,
-                    gutterWidth:25
-                }
-            });
-        
-            // filter items when filter link is clicked
-            $('#Filter a').click(function(){
-                var selector = $(this).attr('data-filter');
-                $container.isotope({ filter: selector });
-                return false;
-            });
-        </script>
 
 <!--	google analytics -->
         <script>

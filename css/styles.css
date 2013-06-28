@@ -30,6 +30,8 @@
 	        
 	    ^4b HOME
       ^4c PAGE
+      ^4d NEWS
+      ^4e GALLERY
 
   ^5  TEXT
 
@@ -98,12 +100,15 @@ button[type=submit] {
   padding: 20px;
   border: 1px solid green; }
 
-/* 
+ /* 
   img {
     display : block;
     background : gray;
   }
-
+*/
+.news #wrapper,
+.gallery #wrapper {
+  background: #474747; }
 
 /* ^4	STRUCTURE
 *************************************************************************/
@@ -262,6 +267,18 @@ html, body {
         display: none; }
         #nav > ul > li > ul li a {
           padding: 5px 1em; }
+  #nav .drop-down:after {
+    color: #ff6600;
+    content: "\203A";
+    display: inline-block;
+    position: relative;
+    right: 8px;
+    top: 0;
+    transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(90deg);
+    /* Safari and Chrome */ }
   #nav a {
     color: white; }
     #nav a:hover {
@@ -421,17 +438,21 @@ html, body {
 .sidebar-panel {
   position: absolute;
   top: 0;
-  height: 100%;
-  width: 250px; }
+  height: 100%; }
 
 .grey {
   background: #333333; }
 
+.white {
+  background: white; }
+
 .left {
-  left: 0; }
+  left: 0;
+  width: 250px; }
 
 .right {
-  right: 0; }
+  right: 0;
+  width: 230px; }
 
 #MainContent {
   width: 480px;
@@ -491,7 +512,7 @@ html, body {
     color: #212121;
     padding: 0 10px; }
   .promo:hover {
-    background: #ff6600; }
+    background: #cccccc; }
 
 #ThumbLinks {
   margin-top: 20px;
@@ -507,6 +528,142 @@ html, body {
       color: #212121; }
     #ThumbLinks a:hover {
       border-bottom: 1px solid #ff6600; }
+
+/* ^4d NEWS */
+.news #MainContent header {
+  padding-top: 20px;
+  margin-bottom: 20px; }
+.news #MainContent article {
+  position: relative;
+  padding-left: 170px;
+  margin-bottom: 20px; }
+  .news #MainContent article img {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .news #MainContent article .itemNews {
+    position: relative;
+    border-bottom: 1px dotted white;
+    min-height: 100px; }
+  .news #MainContent article h3 {
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    font-size: 0.8em; }
+  .news #MainContent article p {
+    font-size: 0.7em;
+    margin: 0 0 0.8em 0;
+    color: white; }
+    .news #MainContent article p .date {
+      font-size: 0.7em;
+      margin-bottom: 0.4em; }
+  .news #MainContent article a span {
+    display: none; }
+  .news #MainContent article a.readMore {
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    height: 20px;
+    width: 20px;
+    background: #ff6600 url(../img/sprite.png) no-repeat -85px -76px; }
+    .news #MainContent article a.readMore:hover {
+      background-color: #cccccc; }
+
+#Pagination {
+  color: #ff6600; }
+  #Pagination p {
+    float: right;
+    font-size: 0.7em; }
+    #Pagination p a {
+      color: white; }
+      #Pagination p a:hover {
+        color: #ff6600; }
+    #Pagination p span {
+      color: white; }
+
+/* ^4e GALLERY */
+.gallery #MainContent {
+  width: 730px; }
+  .gallery #MainContent header {
+    padding-top: 20px;
+    margin-bottom: 20px; }
+
+#Filter {
+  font-size: 0.8em;
+  color: #ff6600;
+  margin-bottom: 20px; }
+  #Filter a {
+    color: white; }
+    #Filter a:hover {
+      color: #ff6600; }
+    #Filter a:not(:last-of-type):after {
+      content: " / ";
+      padding: 0 3px; }
+    #Filter a:first-of-type {
+      padding-left: 6px; }
+
+#ItemsGallery article {
+  margin: 0 20px 0 0; }
+  #ItemsGallery article a {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-family: "Open Sans", Helvetica, Arial, sans-serif;
+    /*&:hover img {
+        -webkit-transition: all 350ms ease;
+        -moz-transition: all 350ms ease;
+        -o-transition: all 350ms ease;
+        -ms-transition: all 350ms ease;
+        transition: all 350ms ease;
+    }*/ }
+    #ItemsGallery article a h3 {
+      color: #ff6600;
+      font-size: 0.8em;
+      line-height: 1.3em;
+      font-weight: normal;
+      margin: 0;
+      width: 100%; }
+    #ItemsGallery article a h4 {
+      color: white;
+      font-size: 0.7em;
+      line-height: 1em;
+      font-weight: normal;
+      margin: 0 0 20px 0; }
+
+/* Isotope Filtering */
+.isotope-item {
+  z-index: 2; }
+
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1; }
+
+/* Isotope CSS3 transitions */
+.isotope,
+.isotope .isotope-item {
+  -webkit-transition-duration: 0.8s;
+  -moz-transition-duration: 0.8s;
+  -o-transition-duration: 0.8s;
+  transition-duration: 0.8s; }
+
+.isotope {
+  -webkit-transition-property: height, width;
+  -moz-transition-property: height, width;
+  -o-transition-property: height, width;
+  transition-property: height, width; }
+
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -o-transition-property: top, left, opacity;
+  transition-property: transform, opacity; }
+
+/* disabling Isotope CSS3 transitions */
+.isotope.no-transition,
+.isotope.no-transition .isotope-item,
+.isotope .isotope-item.no-transition {
+  -webkit-transition-duration: 0s;
+  -moz-transition-duration: 0s;
+  -o-transition-duration: 0s;
+  transition-duration: 0s; }
 
 /* ^5  TEXT
 *************************************************************************/
