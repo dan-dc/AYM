@@ -141,7 +141,7 @@
                     <div id="ItemsGallery">
                     	
                         <article class="events performances">
-                            <a href="#">
+                            <a href="img/imgGalleryBig01.jpg" class="popUp" rel="gallery">
                                 <img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01">
                                 <hgroup>
 	                                <h3>Sarah Smith</h3>
@@ -151,7 +151,7 @@
                         </article>
                         
                         <article class="performances">
-                            <a href="#">
+                            <a href="img/imgGalleryBig01.jpg" class="popUp" rel="gallery">
                                 <img src="img/imgGallery02.jpg" width="220" height="146" alt="Gallery 02">
                                 <hgroup>
 	                                <h3>Sarah Smith</h3>
@@ -161,7 +161,7 @@
                         </article>
                         
                         <article class="musicians performances">
-                            <a href="#">
+                            <a href="img/imgGalleryBig01.jpg" class="popUp" rel="gallery">
                                 <img src="img/imgGallery03.jpg" width="220" height="146" alt="Gallery 03">
                                 <hgroup>
 	                                <h3>Sarah Smith</h3>
@@ -171,7 +171,7 @@
                         </article>
                         
                         <article class="news performances">
-                            <a href="#">
+                            <a href="img/imgGalleryBig01.jpg" class="popUp" rel="gallery">
                                 <img src="img/imgGallery04.jpg" width="220" height="146" alt="Gallery 04">
                                 <hgroup>
 	                                <h3>Sarah Smith</h3>
@@ -181,7 +181,7 @@
                         </article>
                         
                         <article class="news musicians">
-                            <a href="#">
+                            <a href="img/imgGalleryBig01.jpg" class="popUp" rel="gallery">
                                 <img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01">
                                 <hgroup>
 	                                <h3>Sarah Smith</h3>
@@ -191,7 +191,7 @@
                         </article>
                         
                         <article class="events">
-                            <a href="#">
+                            <a href="img/imgGalleryBig01.jpg" class="popUp" rel="gallery">
                                 <img src="img/imgGallery02.jpg" width="220" height="146" alt="Gallery 02">
                                 <hgroup>
 	                                <h3>Sarah Smith</h3>
@@ -201,7 +201,7 @@
                         </article>
                         
                         <article class="news">
-                            <a href="#">
+                            <a href="img/imgGalleryBig01.jpg" class="popUp" rel="gallery">
                                 <img src="img/imgGallery03.jpg" width="220" height="146" alt="Gallery 03">
                                 <hgroup>
 	                                <h3>Sarah Smith</h3>
@@ -211,7 +211,7 @@
                         </article>
                         
                         <article class="events musicians">
-                            <a href="#">
+                            <a href="img/imgGalleryBig01.jpg" class="popUp" rel="gallery">
                                 <img src="img/imgGallery04.jpg" width="220" height="146" alt="Gallery 04">
                                 <hgroup>
 	                                <h3>Sarah Smith</h3>
@@ -221,7 +221,7 @@
                         </article>
                         
                         <article class="musicians">
-                            <a href="#">
+                            <a href="img/imgGalleryBig01.jpg" class="popUp" rel="gallery">
                                 <img src="img/imgGallery01.jpg" width="220" height="146" alt="Gallery 01">
                                 <hgroup>
 	                                <h3>Sarah Smith</h3>
@@ -345,9 +345,18 @@
 
 <!--	scripts -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/core/jquery-1.10.1.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="js/core/jquery-1.10.1.min.js"><\/script>')</script>    
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+        
+<!--    FancyBox -->
+        <link rel="stylesheet" href="css/fancybox/jquery.fancybox.css" type="text/css" media="screen" />
+        <script type="text/javascript" src="js/jquery.fancybox.pack.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(".popUp").fancybox();
+            });
+        </script>
 
 <!--	google analytics -->
         <script>
