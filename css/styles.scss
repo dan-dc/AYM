@@ -598,49 +598,23 @@
            
     }    
   }
-
-  #TopContent {
-      background: $DarkBlack;
-      padding: $GlobalPadding;
-      
-      p {
-        padding-right : 20px;
-        border-right: 1px dotted $White;
-      }
-      
-      article:last-child p {
-          border-right: none;
-      } 
-  }
-  
-  #BottomContent {
-      padding: $GlobalPadding;
-      
-      article {
-        border-right: 1px dotted $White;
-        height : 100px;
-        
-        &:last-child {
-          border-right: none;
-        }
-        
-        p {
-          font-size : 0.7em;
-        }
-      }
-  }
   
   .featured-posts article {
-    width: 312px;   
+    width : 292px;
+    padding : 0 20px 0 0 ;
     float : left;
-    margin-right : 20px;
+    margin-right : $GlobalPadding;
     
-    &:last-of-type {
+    border-right: 1px dotted $White;
+    
+    &:last-child {
+      border-right: none;
       margin-right : 0;
-    } 
-    
+    }
+
     p {
       color : $White;
+      font-size : 0.75em;
     }
 
     img {
@@ -649,6 +623,30 @@
     }
           
   }
+
+  #TopContent {
+      background: $DarkBlack;
+      padding: $GlobalPadding;
+
+      article {
+        position : relative;
+        margin-top : 25px;
+      }
+      
+      h2 {
+        position : absolute;
+        top : -30px;
+      }
+      
+      p {
+        margin-top : 0;
+      }
+  }
+  
+  #BottomContent {
+      padding: $GlobalPadding;
+  }
+  
   
   /* ^4c PAGE */
   .sidebar-panel {
@@ -724,7 +722,7 @@
       bottom : $StickyHeight ;
 
       @include serifFont;
-      font-size: 1.2em; 
+      font-size: 1.3em; 
       
       p {
         color : $White;
@@ -1100,7 +1098,7 @@
     
   h5 {
     @include sansSerifFont; 
-    font-size : $GlobalLinkSize;
+    font-size : 0.75em;
   }
   
   h6 {
@@ -1130,4 +1128,9 @@
     padding: 0 0 $GlobalPadding 0;
     font-size: $GlobalLinkSize + 0.2;
     list-style : none;
+  }
+  
+  #ItemsGallery h3,
+  #ItemsGallery h4 {
+    @include sansSerifFont; 
   }

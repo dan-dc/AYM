@@ -33,6 +33,10 @@ $(document).ready(function() {
         $(this).val('');
 	})
 	
+//	equalise heights of home page featued posts	
+	$('.featured-posts').equalize();
+
+	
 /*************************************************************************
  *  Isotope filter
 *************************************************************************/
@@ -68,7 +72,6 @@ $(document).ready(function() {
 
     $('#Slider').cycle({
         fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
-    });
-	
+    });	
     
 }) // end doc ready()

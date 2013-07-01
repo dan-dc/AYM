@@ -421,36 +421,36 @@ html, body {
     #Slider .slide .darkBG p {
       color: white; }
 
-#TopContent {
-  background: #212121;
-  padding: 20px; }
-  #TopContent p {
-    padding-right: 20px;
-    border-right: 1px dotted white; }
-  #TopContent article:last-child p {
-    border-right: none; }
-
-#BottomContent {
-  padding: 20px; }
-  #BottomContent article {
-    border-right: 1px dotted white;
-    height: 100px; }
-    #BottomContent article:last-child {
-      border-right: none; }
-    #BottomContent article p {
-      font-size: 0.7em; }
-
 .featured-posts article {
-  width: 312px;
+  width: 292px;
+  padding: 0 20px 0 0;
   float: left;
-  margin-right: 20px; }
-  .featured-posts article:last-of-type {
+  margin-right: 20px;
+  border-right: 1px dotted white; }
+  .featured-posts article:last-child {
+    border-right: none;
     margin-right: 0; }
   .featured-posts article p {
-    color: white; }
+    color: white;
+    font-size: 0.75em; }
   .featured-posts article img {
     float: left;
     margin-right: 20px; }
+
+#TopContent {
+  background: #212121;
+  padding: 20px; }
+  #TopContent article {
+    position: relative;
+    margin-top: 25px; }
+  #TopContent h2 {
+    position: absolute;
+    top: -30px; }
+  #TopContent p {
+    margin-top: 0; }
+
+#BottomContent {
+  padding: 20px; }
 
 /* ^4c PAGE */
 .sidebar-panel {
@@ -507,7 +507,7 @@ html, body {
   z-index: 5;
   bottom: 200px;
   font-family: "Century", Georgia, "Times New Roman", Times, serif;
-  font-size: 1.2em; }
+  font-size: 1.3em; }
   #LeftInfo p {
     color: white; }
 
@@ -763,7 +763,7 @@ h4 {
 
 h5 {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
-  font-size: 0.7em; }
+  font-size: 0.75em; }
 
 h6 {
   font-family: "Open Sans", Helvetica, Arial, sans-serif;
@@ -786,3 +786,7 @@ p a {
   padding: 0 0 20px 0;
   font-size: 0.9em;
   list-style: none; }
+
+#ItemsGallery h3,
+#ItemsGallery h4 {
+  font-family: "Open Sans", Helvetica, Arial, sans-serif; }
